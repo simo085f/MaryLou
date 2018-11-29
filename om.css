@@ -1,6 +1,12 @@
+/*Overordnede regler for styling*/
+*{
+    box-sizing: border-box;
+}
 body {
     background-image: url(wall3.jpg);
 }
+
+/* Mobile first version*/
 
 main {
     width: 290px;
@@ -9,4 +15,66 @@ main {
 
 main img{
     width: 100%;
+    border: 15px solid white;
 }
+
+/*Media queries til mobile landscape*/
+
+@media screen and (min-width:627px){
+    main{
+        width: 500px;
+    }
+
+    main img{
+
+    }
+}
+
+/*Media queries til tablet portrait*/
+
+@media screen and (min-width:768px){
+    main{
+        width: 600px;
+    }
+
+    main img{
+
+    }
+}
+
+/*Media queries til tablet landscape*/
+
+@media screen and (min-width:1024px){
+    main{
+        width: 750px;
+    }
+
+    main img{
+
+    }
+}
+
+/*Media queries til 1200px bredde*/
+
+@media screen and (min-width:1200px){
+    main{
+        width: 900px;
+    }
+
+    main img{
+
+    }
+}
+
+/*Media queries til 1500px bredde*/
+
+@media screen and (min-width:1500px){
+    main{
+        width: 1000px;
+    }
+
+    main img{
+
+    }
+}
+
