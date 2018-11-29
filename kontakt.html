@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="om.css" type="text/css">
+    <title>Kontakt Marylou Jewellery</title>
+</head>
+
+<body>
+<!--    <?php include "header.html";?>-->
+    <main>
+    <!--Template til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
+    <section id="container" class="data-container"></section>
+        <template class="data-template">
+        <article class="wpPage">
+            <h1 class="data-title"></h1>
+            <p class="data-text"></p>
+            </article>
+                 </template>
+
+
+    </main>
+
+    <!--<?php include "footer.html;?>-->
+
+    <script>
+        //Hent Json filen når DOM er loaded
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        //Find DOM Elemterne
+        let pages;
+        let pageTemplate = document.querySelector(".data-template");
+        let pageContainer = document.querySelector(".data-container");
+
+        //Hent Json filen ind
+        async function hentJson(){
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=kontakt");
+            pages=await jsonData.json();
+            visPage();
+        }
+
+        function visPage(){
+            console.log(pages);
+
+            //Løb json filen igennem
+            pages.forEach(page =>{
+                let klon = pageTemplate.cloneNode(true).content;
+                klon.querySelector(".data-title").textContent = page.title.rendered;
+                klon.querySelector(".data-text").innerHTML = page.content.rendered;
+
+                //Placer klonen i HTML
+                pageContainer.appendChild(klon);
+            })
+        }
+
+    </script>
+</body>
+</html>
