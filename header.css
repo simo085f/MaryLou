@@ -10,6 +10,8 @@ body{
     float: right;
     margin-top: 10px;
     margin-right: 10px;
+    position: relative;
+    z-index: 11;
 }
 
 .sideNav{
@@ -32,6 +34,7 @@ body{
     color: black;
     display: block;
     transition: 0.3s;
+    border-bottom: 1px solid black;
 }
 
 .topNav{

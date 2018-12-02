@@ -57,13 +57,20 @@
             })
         }
 
-        //Når brugeren scroller 20px ned skal knappen vises
+        //når siden er loaded skal top iconet gemmes indtil der scrolles
+        document.addEventListener("DOMContentLoaded", gem);
+
+        function gem(){
+            document.querySelector(".fas").style.display = "none";
+        }
+
+        //Når brugeren scroller 100px ned skal knappen vises
         window.onscroll = function(){
             scrollFunction()
         };
 
         function scrollFunction(){
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
                 document.querySelector(".fas").style.display = "block";
 
             } else {
