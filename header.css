@@ -1,0 +1,82 @@
+/* generelle regler*/
+body{
+    margin: 0;
+}
+
+/* Styling af navigation i mobilstørrelse */
+
+#logo img{
+    width: 30%;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.sideNav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: gray;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sideNav a{
+    text-decoration: none;
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.topNav{
+  display: none;
+}
+
+/* styling af topnav til ipad og desktop*/
+
+@media screen and (min-width:627px){
+    #sideMenu, .sideNav, .closebtn, span{
+        display: none;
+    }
+
+    #topMenu{
+        display: inline-block;
+        overflow: hidden;
+        width: 390px;
+        float: right;
+        position: relative;
+        z-index: 3;
+    }
+    .punkter{
+
+    }
+    #logo img{
+        float: left;
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    #topMenu a{
+
+        font-size: 1.2em;
+        color: black;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+
+    }
+
+    .punkter{
+        margin-top: 20px;
+    }
+
+
+
+}
