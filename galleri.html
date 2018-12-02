@@ -35,7 +35,7 @@
 
         //Hent Json filen ind
         async function hentJson(){
-            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=galleri");
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/galleri");
             pages=await jsonData.json();
             visPage();
         }
