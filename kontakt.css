@@ -7,9 +7,11 @@ main {
     margin: 0 auto;
 }
 
-main img{
+iframe{
     width: 100%;
+    height: 400px;
 }
+
 
 /*Media queries til mobile landscape*/
 
@@ -18,9 +20,7 @@ main img{
         width: 500px;
     }
 
-    main img{
 
-    }
 }
 
 /*Media queries til tablet portrait*/
@@ -30,7 +30,19 @@ main img{
         width: 600px;
     }
 
-    main img{
+    #main_grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+
+    }
+        #container{
+        width: 250px;
+
+    }
+
+    #container1{
+        width: 340px;
 
     }
 }
@@ -42,9 +54,22 @@ main img{
         width: 750px;
     }
 
-    main img{
+     #main_grid{
+        grid-gap: 20px;
 
     }
+
+        #container{
+        width: 250px;
+
+    }
+
+    #container1{
+        width: 480px;
+
+    }
+
+
 }
 
 /*Media queries til 1200px bredde*/
@@ -54,7 +79,13 @@ main img{
         width: 900px;
     }
 
-    main img{
+         #container{
+        width: 250px;
+
+    }
+
+    #container1{
+        width: 630px;
 
     }
 }
@@ -66,8 +97,6 @@ main img{
         width: 1000px;
     }
 
-    main img{
 
-    }
 }
 

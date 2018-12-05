@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="om.css" type="text/css">
+    <link rel="stylesheet" href="kontakt.css" type="text/css">
     <title>Kontakt Marylou Jewellery</title>
 </head>
 
 <body>
 <!--    <?php include "header.html";?>-->
     <main>
+
+        <section id="main_grid">
     <!--Template til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
     <section id="container" class="data-container"></section>
         <template class="data-template">
@@ -19,7 +21,15 @@
             </article>
                  </template>
 
+        <section id="container1" class="data-container1"></section>
+        <template class="data-template1">
+        <article class="wpPage">
+            <h1 class="data-title1"></h1>
+            <p class="data-text1"></p>
+            </article>
+                 </template>
 
+</section>
     </main>
 
     <!--<?php include "footer.html;?>-->
@@ -33,11 +43,19 @@
         let pageTemplate = document.querySelector(".data-template");
         let pageContainer = document.querySelector(".data-container");
 
+        let map;
+        let mapTemplate = document.querySelector(".data-template1");
+        let mapContainer = document.querySelector(".data-container1");
+
         //Hent Json filen ind
         async function hentJson(){
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=kontakt");
             pages=await jsonData.json();
             visPage();
+
+         let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=map");
+            map = await jsonData1.json();
+            visMap();
         }
 
         function visPage(){
@@ -51,6 +69,20 @@
 
                 //Placer klonen i HTML
                 pageContainer.appendChild(klon);
+            })
+        }
+
+         function visMap(){
+            console.log(map);
+
+            //Løb json filen igennem
+            map.forEach(map =>{
+                let klon = mapTemplate.cloneNode(true).content;
+                klon.querySelector(".data-title1").textContent = map.title.rendered;
+                klon.querySelector(".data-text1").innerHTML = map.content.rendered;
+
+                //Placer klonen i HTML
+                mapContainer.appendChild(klon);
             })
         }
 
