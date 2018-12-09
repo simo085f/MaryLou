@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F8DDCF;
+}
+
+main{
+    width: 750px;
+    margin: 0 auto;
+}
+
+.smykker{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;;
+
+    grid-gap: 20px;
+}
+
+.smykker img{
+    width: 100%;
+    border: 8px solid white;
+
+
+}
