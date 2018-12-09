@@ -7,7 +7,38 @@ body{
 }
 
 main{
-    width: 750px;
+    width: 290px;
+    margin: 0 auto;
+
+
+}
+
+.smykker{
+    display: grid;
+    grid-gap: 20px;
+}
+.smykker img{
+    width: 100%;
+    border: 8px solid white;
+}
+
+
+@media screen and (min-width:627px){
+    main{
+        width: 400px;
+    }
+    .smykker img{
+
+    }
+
+}
+
+
+
+
+@media screen and (min-width:768px){
+    main{
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -24,3 +55,34 @@ main{
 
 
 }
+}
+
+/*Media queries til tablet landscape*/
+
+@media screen and (min-width:1024px){
+    main{
+    width: 750px;
+
+}
+
+}
+
+/*Media queries til 1200px bredde*/
+
+@media screen and (min-width:1200px){
+    main{
+        width: 900px;
+    }
+
+
+}
+
+/*Media queries til 1500px bredde*/
+
+@media screen and (min-width:1500px){
+    main{
+        width: 1000px;
+    }
+
+}
+
