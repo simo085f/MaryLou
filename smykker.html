@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="smykker.css" type="text/css">
+    <title></title>
+</head>
+
+<body>
+    <main>
+
+        <section id="filtrering">
+        <h1></h1>
+            <div class="knapper">
+            <button class="menu_item" data_kategori="alle">Alle</button>
+            <button class="menu_item" data_kategori="Ringe">Ringe</button>
+            <button class="menu_item" data_kategori="Øreringe">Øreringe</button>
+            <button class="menu_item" data_kategori="Armbånd">Armbånd</button>
+            <button class="menu_item" data_kategori="Halskæder">Halskæder</button>
+            <button class="menu_item" data_kategori="Vedhæng">Vedhæng</button>
+                <h1></h1>
+            </div>
+        </section>
+
+        <section class="smykker"></section>
+        <template class="smykke-template">
+        <article class="smykke-container">
+            <img class="image" src="" alt="">
+            <div class="titel"></div>
+            <div class="pris"></div>
+            <div class="kategori"></div>
+
+            </article>
+        </template>
+
+    </main>
+
+    <script>
+
+
+    document.addEventListener("DOMContentLoaded", getJson);
+
+    let alleSmykker;
+    let smykkeTemplate = document.querySelector(".smykke-template");
+    let smykkeContainer = document.querySelector(".smykker");
+
+
+    smykkeFilter="alle";
+
+        async function getJson(){
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/posts");
+            alleSmykker = await jsonData.json();
+            console.log(alleSmykker);
+            visSmykker();
+        }
+
+        document.querySelectorAll(".menu_item").forEach(knap =>{
+            knap.addEventListener("click", filtrering);
+        })
+
+        function filtrering(){
+            smykkeContainer.textContent="";
+            smykkeFilter = this.getAttribute("data_kategori");
+            visSmykker();
+        }
+
+        function visSmykker(){
+            console.log(visSmykker + smykkeFilter);
+            alleSmykker.forEach(smykke =>{
+                if(smykkeFilter == smykke.acf.kategori){
+                    udskriv();
+                } else if(smykkeFilter == "alle"){
+                    udskriv();
+                }
+
+                function udskriv(){
+                    let klon = smykkeTemplate.cloneNode(true).content;
+                    klon.querySelector(".pris").textContent = smykke.acf.pris + "kr";
+                    klon.querySelector(".image").src = smykke.acf.billede;
+                    klon.querySelector(".titel").textContent = smykke.title.rendered;
+
+                    smykkeContainer.appendChild(klon);
+                }
+            })
+        }
+    </script>
+</body>
+</html>
