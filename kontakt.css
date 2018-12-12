@@ -12,6 +12,15 @@ iframe{
     height: 400px;
 }
 
+h1{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
 
 /*Media queries til mobile landscape*/
 

@@ -9,6 +9,15 @@ body {
 
 }
 
+h1{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
 /* Mobile first version*/
 
 main {

@@ -3,6 +3,10 @@ body{
     margin: 0;
 }
 
+.punkter{
+    font-family: 'Raleway', sans-serif;
+}
+
 /* Styling af navigation i mobilstørrelse */
 
 #logo img{
