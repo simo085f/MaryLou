@@ -1,18 +1,20 @@
 /*Overordnede regler for styling*/
-*{
+
+* {
     box-sizing: border-box;
 }
+
 body {
     background-color: #F8DDCF;
 
 }
 
-h1{
+h1 {
     font-family: 'Raleway', sans-serif;
 
 }
 
-p{
+p {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -23,13 +25,14 @@ main {
     margin: 0 auto;
 }
 
-main img{
+main img {
     width: 100%;
     border: 15px solid white;
 }
 
 /* style til top icon*/
-.fas{
+
+.fas {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -41,33 +44,31 @@ main img{
 
 /*Media queries til mobile landscape*/
 
-@media screen and (min-width:627px){
-    main{
+@media screen and (min-width:627px) {
+    main {
         width: 500px;
     }
 
-    main img{
-
-    }
+    main img {}
 }
 
 /*Media queries til tablet portrait*/
 
-@media screen and (min-width:768px){
-    main{
+@media screen and (min-width:768px) {
+    main {
         width: 600px;
-         display: grid;
+        display: grid;
         grid-template-columns: auto auto auto;
         grid-template-rows: auto auto auto;
 
     }
-#container {
+    #container {
         grid-column: 1/1;
         grid-row: 1/2;
         width: 290px;
         margin: 0 auto;
         padding-left: 25px;
-        padding-right:30px;
+        padding-right: 30px;
         padding-top: 30px;
 
     }
@@ -83,12 +84,12 @@ main img{
 
     }
 
-    .linje{
+    .linje {
         grid-column: 2/2;
         grid-row: 1/1;
         width: 1px;
         height: 270px;
-        background-color:  #F18FAB;
+        background-color: #F18FAB;
         margin-top: 120px;
 
     }
@@ -110,19 +111,61 @@ main img{
 
 /*Media queries til tablet landscape*/
 
-@media screen and (min-width:1024px){
-    main{
+@media screen and (min-width:1024px) {
+    main {
         width: 750px;
     }
+    #container {
+        width: 495px;
 
+    }
+
+    #container1 {
+        width: 255px;
+        padding-top: 20px;
+    }
+
+    #container2 {
+        width: 750px;
+        margin-top: -20px;
+    }
+
+    .linje {
+        height: 170px;
+        margin-top: 90px
+    }
 
 }
 
 /*Media queries til 1200px bredde*/
 
-@media screen and (min-width:1200px){
-    main{
+@media screen and (min-width:1200px) {
+    main {
         width: 900px;
+    }
+
+    #container {
+        width: 555px;
+        padding-left: 5px;
+
+    }
+
+    #container1 {
+        width: 245px;
+        padding-top: 30px;
+
+
+    }
+
+    .linje {
+        margin-top: 95px;
+
+    }
+
+
+    #container2 {
+        width: 900px;
+        margin-top: -20px;
     }
 
 
@@ -130,11 +173,20 @@ main img{
 
 /*Media queries til 1500px bredde*/
 
-@media screen and (min-width:1500px){
-    main{
+@media screen and (min-width:1500px) {
+    main {
         width: 1000px;
     }
 
+    #container {
+        padding-left: 1px;
+
+    }
+
+    #container2 {
+        padding-left: 40px;
+    }
+
+
 
 }
-
