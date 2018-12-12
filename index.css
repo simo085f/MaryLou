@@ -111,7 +111,7 @@ main {
         background-color:  #F18FAB;
         grid-column: 1/3;
         grid-row: 2/3;
-        margin-left: 8vw;
+        margin-left: 70px;
 
     }
 
@@ -119,3 +119,70 @@ main {
 }
 
 /*Media queries til tablet landscape*/
+
+@media screen and (min-width:1024px){
+    main{
+        width: 750px;
+    }
+
+    #container{
+        width: 375px;
+    }
+
+     #container1{
+        width: 375px;
+    }
+
+    #container3{
+        width: 750px;
+    }
+
+    .linje1{
+        width: 500px;
+    }
+
+
+}
+
+/*Media queries til 1200px bredde*/
+
+@media screen and (min-width:1200px){
+    main{
+        width: 900px;
+    }
+
+  #container{
+        width: 450px;
+    }
+
+     #container1{
+        width: 450px;
+    }
+
+    #container3{
+        width: 900px;
+    }
+}
+
+/*Media queries til 1500px bredde*/
+
+@media screen and (min-width:1500px){
+    main{
+        width: 1000px;
+    }
+
+    #container{
+        width: 500px;
+    }
+
+     #container1{
+        width: 500px;
+    }
+
+    #container3{
+        width: 1000px;
+    }
+
+
+}
+
