@@ -13,6 +13,20 @@
 </head>
 
 <body>
+    <div class="dropdown">
+    <button onclick="dropFunction()" class="dropknap">FILTRERING</button>
+    <div id="drop" class="content">
+        <div class="menu_item" data_kategori="alle">ALLE</div>
+            <div class="menu_item" data_kategori="Ringe">RINGE</div>
+            <div class="menu_item" data_kategori="Øreringe">ØRERINGE</div>
+            <div class="menu_item" data_kategori="Armbånd">ARMBÅND</div>
+            <div class="menu_item" data_kategori="Halskæder">HALSKÆDER</div>
+            <div class="menu_item" data_kategori="Vedhæng">VEDHÆNG</div>
+
+        </div>
+
+    </div>
+
     <nav>
     <section id="filtrering">
             <div class="knapper">
@@ -95,6 +109,29 @@
                     smykkeContainer.appendChild(klon);
                 }
             })
+        }
+
+          function dropFunction(){
+            document.querySelector("#drop").classList.toggle("visContent");
+        }
+
+        window.onclick = function(event){
+            if(!event.target.matches('.dropknap')){
+                var dropdowns = document.querySelector(".content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++){
+                    var openDrop = dropdowns[i];
+                    if (openDrop.classList.contains('show')){
+                        openDrop.classList.remove(
+                        'show');
+                    }
+                }
+            }
+        }
+
+        //Luk Side navigation til mobilstørrelse
+        function closeMenu(){
+            document.querySelector(".dropdown").style.width = "0";
         }
     </script>
 </body>

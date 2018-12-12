@@ -12,10 +12,60 @@ body {
 main {
     width: 290px;
     margin: 0 auto;
+}
 
+/* filtrerings dropdown knap*/
+#filtrering{
+    display: none;
+}
+
+.dropknap{
+    background-color: transparent;
+    color: #F18FAB;
+    padding: 16px;
+    border: 1px solid #F18FAB;
+    cursor: pointer;
+    width: 150px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dropknap:hover{
+    color: black;
+    background-color: #F18FAB;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.content{
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #F18FAB;
+    width: 150px;
+    z-index: 1;
+}
+
+.menu_item{
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #F18FAB;
+}
+
+.content a:hover{
 
 }
 
+.visContent{
+    display: block;
+}
+
+
+/* grid opsætning af smykker/produkter*/
 .smykker {
     display: grid;
     grid-gap: 20px;
@@ -73,6 +123,10 @@ main {
         margin: 0 auto;
     }
 
+    .dropdown{
+        display: none;
+    }
+
     .smykker {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -93,6 +147,7 @@ main {
         border-bottom: 1px solid #F18FAB;
         background-color: #F8DDCF
 
+
     }
 
     .knapper {
@@ -102,10 +157,10 @@ main {
         justify-content: center;
 
 
+    }
 
-
-
-
+    #filtrering{
+        display: block;
     }
 
 
