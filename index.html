@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Om side som omhandler Marylou Jewerllery">
+    <meta name="description" content="Homepage til Marylou Jewerllery">
     <link rel="stylesheet" href="index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
     <title>Marylou Jewellery</title>
@@ -19,6 +19,8 @@
             </article>
                  </template>
 
+        <div class="linje"></div>
+
         <section id="container1" class="data-container1"></section>
         <template class="data-template1">
         <article class="wpPage">
@@ -28,13 +30,13 @@
                  </template>
 
 
-        <section id="container2" class="data-container2"></section>
+        <!--<section id="container2" class="data-container2"></section>
         <template class="data-template2">
         <article class="wpPage">
             <h1 class="data-title2"></h1>
             <p class="data-text2"></p>
             </article>
-                 </template>
+                 </template>-->
 
          <section id="container3" class="data-container3"></section>
         <template class="data-template3">
@@ -43,6 +45,8 @@
             <p class="data-text3"></p>
             </article>
                  </template>
+
+        <div class="linje1"></div>
 
     </main>
 
@@ -59,9 +63,6 @@
         let billedeTemplate = document.querySelector(".data-template1");
         let billedeContainer = document.querySelector(".data-container1");
 
-        let billede1;
-        let billede1Template = document.querySelector(".data-template2");
-        let billede1Container = document.querySelector(".data-container2");
 
         let text;
         let textTemplate = document.querySelector(".data-template3");
@@ -77,9 +78,6 @@
             billede = await jsonData1.json();
             visBillede();
 
-            let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=billede2");
-            billede1 = await jsonData2.json();
-            visBillede1();
 
             let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=eventyr");
             text = await jsonData3.json();
@@ -114,19 +112,7 @@
             })
         }
 
-        function visBillede1(){
-            console.log(billede1);
 
-            //Løb json filen igennem
-            billede1.forEach(billede1 =>{
-                let klon = billede1Template.cloneNode(true).content;
-                klon.querySelector(".data-title2").textContent = billede1.title.rendered;
-                klon.querySelector(".data-text2").innerHTML = billede1.content.rendered;
-
-                //Placer klonen i HTML
-                billede1Container.appendChild(klon);
-            })
-        }
 
         function visText(){
             console.log(text);
