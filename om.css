@@ -49,7 +49,15 @@ main img {
         width: 500px;
     }
 
-    main img {}
+    main img {
+    width: 100%;
+    border: 15px solid white;
+}
+    #container1{
+        width: 350px;
+        margin: 0 auto;
+    }
+
 }
 
 /*Media queries til tablet portrait*/
