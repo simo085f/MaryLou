@@ -153,14 +153,27 @@ main {
 
   #container{
         width: 450px;
+      padding-top: 35px;
+      padding-right: 65px;
     }
 
      #container1{
         width: 450px;
+         padding-left: 120px;
     }
 
     #container3{
         width: 900px;
+    }
+
+    .linje1{
+        width: 700px;
+        margin-top: 40px;
+    }
+
+    .linje{
+        margin-left: 30px;
+        margin-top: 70px;
     }
 }
 
@@ -173,16 +186,27 @@ main {
 
     #container{
         width: 500px;
+        padding-top: 60px
+
     }
 
      #container1{
         width: 500px;
+         padding-left: 220px;
     }
 
     #container3{
         width: 1000px;
     }
+ .linje1{
+        width: 850px;
+        margin-top: 40px;
+    }
 
+     .linje{
+        margin-left: 60px;
+        margin-top: 70px;
+    }
 
 }
 
