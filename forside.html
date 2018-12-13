@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forside.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+
+    <main>
+
+
+     <section id="container" class="data-container"></section>
+        <template class="data-template">
+        <article class="wpPage">
+            <h1 class="data-title"></h1>
+            <p class="data-text"></p>
+            </article>
+                 </template>
+
+        <section id="forside">
+        <img src="nyforside.jpg">
+        </section>
+
+         <section id="forside1">
+        <img src="forsidemobil.jpg">
+        </section>
+
+
+         <section id="container3" class="data-container3"></section>
+        <template class="data-template3">
+        <article class="wpPage">
+            <h1 class="data-title3"></h1>
+            <p class="data-text3"></p>
+            </article>
+                 </template>
+
+        <div class="linje1"></div>
+
+    </main>
+
+    <script>
+        //Hent Json filen når DOM er loaded
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        //Find DOM Elemterne
+        let pages;
+        let pageTemplate = document.querySelector(".data-template");
+        let pageContainer = document.querySelector(".data-container");
+
+
+        let text;
+        let textTemplate = document.querySelector(".data-template3");
+        let textContainer = document.querySelector(".data-container3");
+
+        //Hent Json filen ind
+        async function hentJson(){
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=dansk-smykkedesign-og-kunsthandvaerk");
+            pages=await jsonData.json();
+            visPage();
+
+
+            let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=eventyr");
+            text = await jsonData3.json();
+            visText();
+        }
+
+        function visPage(){
+            console.log(pages);
+
+            //Løb json filen igennem
+            pages.forEach(page =>{
+                let klon = pageTemplate.cloneNode(true).content;
+                klon.querySelector(".data-title").textContent = page.title.rendered;
+                klon.querySelector(".data-text").innerHTML = page.content.rendered;
+
+                //Placer klonen i HTML
+                pageContainer.appendChild(klon);
+            })
+        }
+
+        function visText(){
+            console.log(text);
+
+            //Løb json filen igennem
+            text.forEach(text =>{
+                let klon = textTemplate.cloneNode(true).content;
+                klon.querySelector(".data-title3").textContent = text.title.rendered;
+                klon.querySelector(".data-text3").innerHTML = text.content.rendered;
+
+                //Placer klonen i HTML
+                textContainer.appendChild(klon);
+            })
+        }
+    </script>
+
+
+</body>
+</html>

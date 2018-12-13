@@ -1,0 +1,130 @@
+/*Overordnede regler for styling*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8DDCF;
+
+}
+
+h1{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Mobile first version*/
+
+main {
+    width: 290px;
+    margin: 0 auto;
+}
+
+/* style til top icon*/
+
+.fas {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 5;
+    cursor: pointer;
+
+}
+
+#forside img{
+    display: none;
+}
+
+#forside1 img{
+    width: 100%;
+}
+/*Media queries til mobile landscape*/
+
+@media screen and (min-width:627px) {
+    main {
+        width: 400px;
+    }
+}
+
+/*Media queries til tablet portrait*/
+
+@media screen and (min-width:768px) {
+    main {
+        width: 600px;
+    }
+
+    #forside img{
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #forside1 img{
+        display: none;
+    }
+
+
+}
+
+/*Media queries til tablet landscape*/
+
+@media screen and (min-width:1024px){
+    main{
+        width: 750px;
+    }
+
+    #container{
+        width: 750px;
+    }
+
+
+    #container3{
+        width: 750px;
+    }
+
+
+}
+
+/*Media queries til 1200px bredde*/
+
+@media screen and (min-width:1200px){
+    main{
+        width: 900px;
+    }
+
+  #container{
+        width: 900px;
+
+    }
+
+    #container3{
+        width: 900px;
+    }
+}
+
+/*Media queries til 1500px bredde*/
+
+@media screen and (min-width:1500px){
+    main{
+        width: 1000px;
+    }
+
+    #container{
+        width: 1000px;
+
+
+    }
+
+    #container3{
+        width: 1000px;
+
+
+}
+
