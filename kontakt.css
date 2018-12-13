@@ -22,6 +22,15 @@ main p{
     font-family: 'Montserrat', sans-serif;
 }
 
+#container a{
+    color: #F18FAB;
+    text-decoration: none;
+}
+
+#container a:hover{
+    text-decoration: underline;
+}
+
 
 /*Media queries til mobile landscape*/
 
