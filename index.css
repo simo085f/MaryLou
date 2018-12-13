@@ -37,11 +37,15 @@ main {
 
 }
 
+   #container1 img{
+        width: 100%;
+    }
+
 /*Media queries til mobile landscape*/
 
 @media screen and (min-width:627px) {
     main {
-        width: 500px;
+        width: 400px;
     }
 
     main img {}
@@ -79,15 +83,19 @@ main {
         margin: 0 auto;
         padding-left: 3vw;
         padding-right: 3vw;
-        padding-top: 3vw;
+        padding-top: 11vw;
         padding-bottom: 1vw;
+    }
+
+    #container1 img{
+        width: 100%;
     }
 
     .linje{
         grid-column: 2/2;
         grid-row: 1/1;
         width: 1px;
-        height: 270px;
+        height: 300px;
         background-color:  #F18FAB;
         margin-top: 55px;
 
@@ -129,8 +137,18 @@ main {
         width: 375px;
     }
 
+    .linje{
+        margin-top: 60px;
+    }
+
      #container1{
         width: 375px;
+         margin-top: -6vw;
+
+    }
+
+    #container1 img{
+        width:100%
     }
 
     #container3{
@@ -139,6 +157,9 @@ main {
 
     .linje1{
         width: 500px;
+        margin-top: 25px;
+        margin-left: 90px;
+        width: 600px;
     }
 
 
@@ -153,7 +174,7 @@ main {
 
   #container{
         width: 450px;
-      padding-top: 35px;
+      padding-top: 60px;
       padding-right: 65px;
     }
 
@@ -186,13 +207,14 @@ main {
 
     #container{
         width: 500px;
-        padding-top: 60px
+        margin-top: 60px;
+
 
     }
 
      #container1{
         width: 500px;
-         padding-left: 220px;
+
     }
 
     #container3{
@@ -200,12 +222,11 @@ main {
     }
  .linje1{
         width: 850px;
-        margin-top: 40px;
+        margin-top: 50px;
     }
 
      .linje{
-        margin-left: 70px;
-        margin-top: 70px;
+        margin-top: 90px;
     }
 
 }

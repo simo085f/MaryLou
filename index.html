@@ -22,13 +22,14 @@
 
         <div class="linje"></div>
 
-        <section id="container1" class="data-container1"></section>
+        <section id="container1" class="data-container1">
+            <img src="forsidemobil.jpg"><!--</section>
         <template class="data-template1">
         <article class="wpPage">
             <h1 class="data-title1"></h1>
             <p class="data-text1"></p>
-            </article>
-                 </template>
+            </article>-->
+        </section>
 
 
         <!--<section id="container2" class="data-container2"></section>
@@ -60,9 +61,9 @@
         let pageTemplate = document.querySelector(".data-template");
         let pageContainer = document.querySelector(".data-container");
 
-        let billede;
+        /*let billede;
         let billedeTemplate = document.querySelector(".data-template1");
-        let billedeContainer = document.querySelector(".data-container1");
+        let billedeContainer = document.querySelector(".data-container1");*/
 
 
         let text;
@@ -75,9 +76,9 @@
             pages=await jsonData.json();
             visPage();
 
-            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=billede1");
+            /*let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=billede1");
             billede = await jsonData1.json();
-            visBillede();
+            visBillede();*/
 
 
             let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=eventyr");
