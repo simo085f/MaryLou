@@ -57,6 +57,7 @@
                 </div>
             <div class="kategori"></div>
 
+
             </article>
         </template>
 
@@ -102,9 +103,15 @@
 
                 function udskriv(){
                     let klon = smykkeTemplate.cloneNode(true).content;
+
                     klon.querySelector(".pris").textContent = smykke.acf.pris + "kr";
                     klon.querySelector(".image").src = smykke.acf.billede;
                     klon.querySelector(".titel").textContent = smykke.title.rendered;
+
+
+ klon.querySelector("img").addEventListener("click", () =>{
+                       window.location.href = "single.html?id=" + smykke.id;
+                  });
 
                     smykkeContainer.appendChild(klon);
                 }

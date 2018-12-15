@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    background-color: #F8DDCF;
+}
+
+main {
+    width: 290px;
+    margin: 0 auto;
+}
+
+main h1{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+main p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.image{
+    width: 100%;
+    border: 8px solid white;
+
+}
+
+.data-container{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/*Media queries til mobile landscape*/
+
+@media screen and (min-width:627px){
+    main{
+        width: 500px;
+    }
+
+
+}
+
+/*Media queries til tablet portrait*/
+
+@media screen and (min-width:768px){
+    main{
+        width: 600px;
+    }
+
+
+}
+
+/*Media queries til tablet landscape*/
+
+@media screen and (min-width:1024px){
+    main{
+        width: 750px;
+    }
+
+
+
+}
+
+/*Media queries til 1200px bredde*/
+
+@media screen and (min-width:1200px){
+    main{
+        width: 900px;
+    }
+
+
+}
+
+/*Media queries til 1500px bredde*/
+
+@media screen and (min-width:1500px){
+    main{
+        width: 1000px;
+    }
+
+
+}
+

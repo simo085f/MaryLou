@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="single.css" type="text/css">
+     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Specifikationer</title>
+</head>
+
+<body>
+
+    <main>
+        <section class="data-container">
+            <article>
+                <img class="image" src="" alt="">
+                <h1 class="titel"></h1>
+                <div class="langbeskrivelse"></div>
+                <div class="pris"></div>
+                <div class="kategori"></div>
+                <div class="id"></div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+    let urlParams = new URLSearchParams(window.location.search);
+    let id = urlParams.get("id");
+    let smykke;
+
+         document.addEventListener("DOMContentLoaded", getJson);
+
+        async function getJson(){
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/posts");
+            alleSmykker = await jsonData.json();
+            console.log(alleSmykker);
+            visSmykker();
+        }
+
+        function visSmykker(){
+            let klon = document.querySelector(".data-container");
+
+            alleSmykker.forEach(smykke=>{
+                if(smykke.id == id){
+
+
+                    klon.querySelector(".pris").textContent = smykke.acf.pris + "kr";
+                    klon.querySelector(".image").src = smykke.acf.billede;
+                    klon.querySelector(".titel").textContent = smykke.title.rendered;
+                    klon.querySelector(".langbeskrivelse").innerHTML = smykke.content.rendered;
+                }
+            })
+        }
+
+
+    </script>
+
+</body>
+</html>
