@@ -27,6 +27,15 @@ main p{
     font-family: 'Montserrat', sans-serif;
 }
 
+.kobnu{
+    border: none;
+    background-color: transparent;
+    border: 1.5px solid #F18FAB;
+    padding: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
 
 
 /*Media queries til mobile landscape*/
@@ -43,8 +52,32 @@ main p{
 
 @media screen and (min-width:768px){
     main{
-        width: 600px;
+        width: 650px;
     }
+    .data-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 30px;
+        width: 650px;
+
+    }
+
+    .image{
+        width: 310px;
+        margin-top: 20px;
+
+
+    }
+
+    .information{
+        width: 310px;
+
+    }
+
+    .pris{
+        padding-bottom: 20px;
+    }
+
 
 
 }
