@@ -23,17 +23,18 @@ main {
 .dropknap{
     background-color: transparent;
     color: #F18FAB;
-    padding: 16px;
+    padding: 12px;
     border: 1px solid #F18FAB;
     cursor: pointer;
-    width: 150px;
+    width: 290px;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    text-align: left;
 }
 
 .dropknap:hover{
     color: black;
-    background-color: #F18FAB;
+
 }
 
 .dropdown{
@@ -46,8 +47,8 @@ main {
     position: absolute;
     background-color: transparent;
     border: 1px solid #F18FAB;
-    width: 150px;
     z-index: 1;
+    width: 290px;
 }
 
 .menu_item{
@@ -97,9 +98,15 @@ main {
         cursor: pointer;
         padding-left: 40pxw;
         padding-right: 40px;
-     padding-top: 10px;;
+     padding-top: 10px;
+     font-family: 'Montserrat', sans-serif;
+
+
 
     }
+.menu_item:hover{
+    border-bottom: 1px solid #F18FAB;
+}
 
 .knapper{
     font-family: 'Raleway', sans-serif;
@@ -111,8 +118,14 @@ main {
     main {
         width: 400px;
     }
-    .smykker img {}
 
+    .content{
+        width: 400px;
+    }
+
+    .dropknap{
+        width: 400px;
+    }
 }
 
 

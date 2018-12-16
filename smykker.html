@@ -34,6 +34,7 @@
 
 <div class="dropdown">
     <button onclick="dropFunction()" class="dropknap">FILTRERING</button>
+
     <div id="drop" class="content">
         <div class="menu_item" data_kategori="alle">ALLE</div>
             <div class="menu_item" data_kategori="Ringe">RINGE</div>
@@ -41,6 +42,7 @@
             <div class="menu_item" data_kategori="Armbånd">ARMBÅND</div>
             <div class="menu_item" data_kategori="Halskæder">HALSKÆDER</div>
             <div class="menu_item" data_kategori="Vedhæng">VEDHÆNG</div>
+
 
         </div>
 
@@ -109,8 +111,9 @@
                     klon.querySelector(".titel").textContent = smykke.title.rendered;
 
 
- klon.querySelector("img").addEventListener("click", () =>{
+ klon.querySelector("button").addEventListener("click", () =>{
                        window.location.href = "single.html?id=" + smykke.id;
+
                   });
 
                     smykkeContainer.appendChild(klon);
@@ -119,6 +122,8 @@
         }
 
           function dropFunction(){
+
+            document.querySelector(".smykker").style.marginTop = "250px";
             document.querySelector("#drop").classList.toggle("visContent");
         }
 
@@ -131,15 +136,23 @@
                     if (openDrop.classList.contains('show')){
                         openDrop.classList.remove(
                         'show');
+
+
+
                     }
                 }
             }
         }
 
-        //Luk Side navigation til mobilstørrelse
-        function closeMenu(){
-            document.querySelector(".dropdown").style.width = "0";
-        }
+        /*function closeNav(){
+             document.querySelector(".smykker").style.marginTop = "0";
+
+            document.querySelector(".content").style.height = "0";
+        }*/
+
+
+
+
     </script>
 </body>
 </html>
