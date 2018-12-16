@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     background-color: #F8DDCF;
@@ -6,6 +9,7 @@ body {
 main {
     width: 290px;
     margin: 0 auto;
+    padding-top: 2vw;
 }
 
 main iframe{
