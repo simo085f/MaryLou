@@ -31,6 +31,10 @@ main p{
     text-decoration: underline;
 }
 
+#main_grid{
+    padding-top: 2vw;
+}
+
 
 /*Media queries til mobile landscape*/
 
@@ -53,6 +57,7 @@ main p{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
+        padding-top: 12vw;
 
     }
         #container{
