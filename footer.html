@@ -13,124 +13,38 @@
 
 <body>
 <footer>
+    <section id="info">
+    <h1>INFO</h1>
+        <div><a href="handel.html">Handelsbetingelser</a></div>
+        <div><a href="levering.html">Levering</a></div>
+       <div><a href="retur.html">Returnering</a></div>
 
-    <!--Template til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
-    <section id="container" class="data-container"></section>
-        <template class="data-template">
-        <article class="wpPage">
-            <h1 class="data-title"></h1>
-            <div class="indhold">
-            <p class="data-text"></p></div>
-            </article>
-                 </template>
+    </section>
 
-        <section id="container1" class="data-container1"></section>
-        <template class="data-template1">
-        <article class="wpPage">
-            <h1 class="data-title1"></h1>
-            <div class="indhold1">
-            <p class="data-text1"></p></div>
-            </article>
-                 </template>
+    <section id="Mary">
+        <h1>MARYLOU JEWELLERY</h1>
+    <p>
+        Gammel Kongevej 101<br>
+1850 Frederiksberg<br>
+Tlf: +45 22287854<br>
+Mail: maryloujewellery@mail.com<br>
+</p>
+<p>Åbningstider:<br>
+Mandag lukket<br>
+Tirsdag-fredag 11-17.30<br>
+Lørdag 11-14<br>
 
-        <section id="container2" class="data-container2"></section>
-        <template class="data-template2">
-        <article class="wpPage">
-            <h1 class="data-title2"></h1>
-            <div class="indhold2">
-            <p class="data-text2"></p></div>
-            <div class="soME"><a href="https://www.facebook.com/MaryLou-Jewellery-1611072669123272/?fref=ts">
+        </p>
+    </section>
+
+    <section id="folg">
+    <h1>FØLG MARYLOU JEWELLERY</h1>
+    <div class="soME"><a href="https://www.facebook.com/MaryLou-Jewellery-1611072669123272/?fref=ts">
                 <i class="fab fa-facebook-f" style="font-size: 24px; color: black;"></i></a></div>
             <div class="soME"><a href="https://www.instagram.com/marylou_jewellery/">
                 <i class="fab fa-instagram" style="font-size: 24px; color: black;"></i></a></div>
-            </article>
-                 </template>
-
-
+    </section>
 
     </footer>
-
-    <!--<?php include "footer.html;?>-->
-
-    <script>
-
-
-         //Hent Json filen når DOM er loaded
-        document.addEventListener("DOMContentLoaded", hentJson);
-
-        //Find DOM Elemterne
-        let info;
-        let infoTemplate = document.querySelector(".data-template");
-        let infoContainer = document.querySelector(".data-container");
-
-        let om;
-        let omTemplate = document.querySelector(".data-template1");
-        let omContainer = document.querySelector(".data-container1");
-
-        let folg;
-        let folgTemplate = document.querySelector(".data-template2");
-        let folgContainer = document.querySelector(".data-container2");
-
-        //Hent Json filen ind
-        async function hentJson(){
-            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=info");
-            info = await jsonData.json();
-            visInfo();
-
-            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=marylou-jewellery-2");
-            om = await jsonData1.json();
-            visOm();
-
-            let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=folg-marylou-jewellery");
-            folg = await jsonData2.json();
-            visFolg();
-        }
-
-        function visInfo(){
-            console.log(info);
-
-            //Løb json filen igennem
-            info.forEach(info =>{
-                let klon = infoTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title").textContent = info.title.rendered;
-                klon.querySelector(".data-text").innerHTML = info.content.rendered;
-
-                //Placer klonen i HTML
-                infoContainer.appendChild(klon);
-            })
-        }
-
-         function visOm(){
-            console.log(om);
-
-            //Løb json filen igennem
-            om.forEach(om =>{
-                let klon = omTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title1").textContent = om.title.rendered;
-                klon.querySelector(".data-text1").innerHTML = om.content.rendered;
-
-                //Placer klonen i HTML
-                omContainer.appendChild(klon);
-            })
-        }
-
-         function visFolg(){
-            console.log(folg);
-
-            //Løb json filen igennem
-            folg.forEach(folg =>{
-                let klon = folgTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title2").textContent = folg.title.rendered;
-                klon.querySelector(".data-text2").innerHTML = folg.content.rendered;
-
-                //Placer klonen i HTML
-                folgContainer.appendChild(klon);
-            })
-        }
-
-
-
-
-    </script>
 </body>
 </html>
