@@ -85,12 +85,13 @@ main {
 
 .koeb {
     border: none;
-    background-color: transparent;
-    border: 1.5px solid #F18FAB;
+    background-color: white;
+    color: #F18FAB;
     padding: 4px;
     width: 100%;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
 }
 
 .menu_item {
@@ -147,6 +148,7 @@ main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
+        margin-top: 100px;
 
     }
 
@@ -158,14 +160,19 @@ main {
     }
     nav {
         top: 0;
-        width: 100%;
+        width: 67%;
         border-bottom: 1px solid #F18FAB;
+        border-top: 1px solid #F18FAB;
         background-color: transparent;
+        float: right;
+    }
+
+    .menu_item{
+        padding-left: 10px;
+        padding-right: 15px;
     }
 
     .knapper {
-        width: 620px;
-        margin: 0 auto;
         display: flex;
         justify-content: center;
 
@@ -188,8 +195,16 @@ main {
     }
 
 
-    .knapper {
-        width: 850px;
+    nav{
+        width: 50%;
+
+
+    }
+
+    .menu_item{
+        padding-left: 20px;
+        padding-right: 20px;
+
 
     }
 
@@ -203,9 +218,6 @@ main {
         width: 900px;
     }
 
-    .knapper {
-        width: 900px;
-    }
 
 
 }
@@ -217,8 +229,9 @@ main {
         width: 1000px;
     }
 
-    .knapper {
-        width: 1000px;
+
+    nav{
+        width: 45%
     }
 
 }
