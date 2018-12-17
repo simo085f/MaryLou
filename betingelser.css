@@ -8,7 +8,7 @@ body {
 }
 
 main {
-    width: 290px;
+    width: 360px;
     margin: 0 auto;
     padding-top: 2vw;
 }
@@ -38,7 +38,7 @@ main p{
 
 @media screen and (min-width:768px){
     main{
-        width: 600px;
+        width: 620px;
     }
 
 }
@@ -47,7 +47,7 @@ main p{
 
 @media screen and (min-width:1024px){
     main{
-        width: 750px;
+        width: 850px;
     }
 
 

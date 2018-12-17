@@ -8,7 +8,7 @@ body {
 }
 
 main {
-    width: 290px;
+    width: 360px;
     margin: 0 auto;
     padding-top: 2vw;
 }
@@ -55,7 +55,7 @@ main p{
 
 @media screen and (min-width:768px){
     main{
-        width: 600px;
+        width: 620px;
     }
 
     #main_grid{
@@ -66,12 +66,12 @@ main p{
 
     }
         #container{
-        width: 250px;
+        width: 260px;
 
     }
 
     #container1{
-        width: 340px;
+        width: 360px;
 
     }
 }
@@ -80,7 +80,7 @@ main p{
 
 @media screen and (min-width:1024px){
     main{
-        width: 750px;
+        width: 850px;
     }
 
      #main_grid{
@@ -89,12 +89,12 @@ main p{
     }
 
         #container{
-        width: 250px;
+        width: 330px;
 
     }
 
     #container1{
-        width: 480px;
+        width: 520px;
 
     }
 
@@ -124,6 +124,14 @@ main p{
 @media screen and (min-width:1500px){
     main{
         width: 1000px;
+    }
+
+    #container{
+        width: 350px;
+    }
+
+    #container1{
+        width: 730px;
     }
 
 

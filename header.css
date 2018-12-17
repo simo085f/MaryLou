@@ -1,6 +1,7 @@
 /* generelle regler*/
 body{
     margin: 0;
+    background-color: transparent;
 }
 
 .punkter a{
