@@ -3,7 +3,8 @@
 }
 body {
     margin: 0;
-    background-color: #F8DDCF;
+    background-image: url(1.jpg);
+    background-size: 100%;
 }
 
 main {

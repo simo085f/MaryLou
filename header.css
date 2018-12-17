@@ -63,7 +63,8 @@ body{
     z-index: 10;
     top: 0;
     left: 0;
-    background-color: #F8DDCF;
+    background-image: url(1.jpg);
+    background-size: 100%;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -132,9 +133,7 @@ body{
         height: 60px;
         float: right;
         z-index: 1;
-        border-bottom: 1px solid #F18FAB;
-
-        background-color: #F8DDCF;
+    background-color: transparent;
     }
 
 

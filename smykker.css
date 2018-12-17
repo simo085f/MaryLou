@@ -3,10 +3,9 @@
 }
 
 body {
-   margin: 0;
-    background-image: url(bag.jpg);
-    width:100%;
-    overflow-x: hidden;
+  margin: 0;
+    background-image: url(1.jpg);
+    background-size: 100%;
 }
 
 
@@ -164,7 +163,7 @@ main {
         top: 0;
         width: 100%;
         border-bottom: 1px solid #F18FAB;
-        background-color: #F8DDCF
+        background-color: transparent;
     }
 
     .knapper {
