@@ -12,7 +12,7 @@
 
 
 <body>
-
+<?php include "header.html"; ?>
 
     <main>
         <section id="container" class="data-container"></section>
@@ -23,26 +23,28 @@
             </article>
                  </template>
 
-        <div class="linje"></div>
 
         <section id="container1" class="data-container1">
-            <img src="forsidemobil.jpg">
-            <!--</section>
+        </section>
         <template class="data-template1">
         <article class="wpPage">
             <h1 class="data-title1"></h1>
             <p class="data-text1"></p>
-            </article>-->
-        </section>
+            </article>
+        </template>
 
 
-        <!--<section id="container2" class="data-container2"></section>
+
+        <section id="container2" class="data-container2"></section>
         <template class="data-template2">
-        <article class="wpPage">
+            <div class="border">
+        <article class="wpPage2">
             <h1 class="data-title2"></h1>
             <p class="data-text2"></p>
+
             </article>
-                 </template>-->
+                </div>
+                 </template>
 
         <section id="container3" class="data-container3"></section>
         <template class="data-template3">
@@ -52,10 +54,9 @@
             </article>
                  </template>
 
-        <div class="linje1"></div>
 
     </main>
-
+<?php include "footer.html"; ?>
     <script>
         //Hent Json filen når DOM er loaded
         document.addEventListener("DOMContentLoaded", hentJson);
@@ -65,29 +66,37 @@
         let pageTemplate = document.querySelector(".data-template");
         let pageContainer = document.querySelector(".data-container");
 
-        /*let billede;
+        let billede;
         let billedeTemplate = document.querySelector(".data-template1");
-        let billedeContainer = document.querySelector(".data-container1");*/
-
+        let billedeContainer = document.querySelector(".data-container1");
 
         let text;
-        let textTemplate = document.querySelector(".data-template3");
-        let textContainer = document.querySelector(".data-container3");
+        let textTemplate = document.querySelector(".data-template2");
+        let textContainer = document.querySelector(".data-container2");
+
+
+        let ring;
+        let ringTemplate = document.querySelector(".data-template3");
+        let ringContainer = document.querySelector(".data-container3");
 
         //Hent Json filen ind
         async function hentJson() {
-            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=dansk-smykkedesign-og-kunsthandvaerk");
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=760-2");
             pages = await jsonData.json();
             visPage();
 
-            /*let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=billede1");
+            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=763-2");
             billede = await jsonData1.json();
-            visBillede();*/
+            visBillede();
 
-
-            let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=eventyr");
-            text = await jsonData3.json();
+            let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=dansk-smykkedesign-og-kunsthandvaerk");
+            text = await jsonData2.json();
             visText();
+
+
+            let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=766-2");
+            ring = await jsonData3.json();
+            visRing();
         }
 
         function visPage() {
@@ -126,11 +135,27 @@
             //Løb json filen igennem
             text.forEach(text => {
                 let klon = textTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title3").textContent = text.title.rendered;
-                klon.querySelector(".data-text3").innerHTML = text.content.rendered;
+                klon.querySelector(".data-title2").textContent = text.title.rendered;
+                klon.querySelector(".data-text2").innerHTML = text.content.rendered;
 
                 //Placer klonen i HTML
                 textContainer.appendChild(klon);
+            })
+        }
+
+
+
+        function visRing() {
+            console.log(ring);
+
+            //Løb json filen igennem
+            ring.forEach(ring => {
+                let klon = ringTemplate.cloneNode(true).content;
+                klon.querySelector(".data-title3").textContent = ring.title.rendered;
+                klon.querySelector(".data-text3").innerHTML = ring.content.rendered;
+
+                //Placer klonen i HTML
+                ringContainer.appendChild(klon);
             })
         }
     </script>
