@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Om side som omhandler Marylou Jewerllery">
+    <meta name="description" content="Om side som omhandler Marylou Jewerllery og hvor hendes inspiration til at lave smykker kommer fra">
     <link rel="stylesheet" href="om.css" type="text/css">
-<!--    link til icon-->
+    <!--    link til icon-->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
     <title>Om Marylou Jewellery</title>
 </head>
 
 <body>
-<!--    <?php include "header.html";?>-->
+    <!--    <?php include "header.html";?>-->
     <main>
-    <!--Template til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
-    <section id="container" class="data-container"></section>
+        <!--Template til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
+        <section id="container" class="data-container"></section>
         <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
@@ -42,7 +42,7 @@
             </article>
                  </template>
 
-<div onclick="topFunction()"> <i style='font-size:24px' class='fas'>&#xf062;</i></div>
+        <div onclick="topFunction()"> <i style='font-size:24px' class='fas'>&#xf062;</i></div>
 
     </main>
 
@@ -66,9 +66,9 @@
         let textContainer = document.querySelector(".data-container2");
 
         //Hent Json filen ind
-        async function hentJson(){
+        async function hentJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=marylou-jewellery");
-            pages=await jsonData.json();
+            pages = await jsonData.json();
             visPage();
 
             let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=129-2");
@@ -80,11 +80,11 @@
             visText();
         }
 
-        function visPage(){
+        function visPage() {
             console.log(pages);
 
             //Løb json filen igennem
-            pages.forEach(page =>{
+            pages.forEach(page => {
                 let klon = pageTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title").textContent = page.title.rendered;
                 klon.querySelector(".data-text").innerHTML = page.content.rendered;
@@ -94,11 +94,11 @@
             })
         }
 
-        function visBillede(){
+        function visBillede() {
             console.log(billede);
 
             //Løb json filen igennem
-            billede.forEach(billede =>{
+            billede.forEach(billede => {
                 let klon = billedeTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title1").textContent = billede.title.rendered;
                 klon.querySelector(".data-text1").innerHTML = billede.content.rendered;
@@ -108,11 +108,11 @@
             })
         }
 
-        function visText(){
+        function visText() {
             console.log(text);
 
             //Løb json filen igennem
-            text.forEach(text =>{
+            text.forEach(text => {
                 let klon = textTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title2").textContent = text.title.rendered;
                 klon.querySelector(".data-text2").innerHTML = text.content.rendered;
@@ -127,30 +127,29 @@
         //når siden er loaded skal top iconet gemmes indtil der scrolles
         document.addEventListener("DOMContentLoaded", gem);
 
-        function gem(){
+        function gem() {
             document.querySelector(".fas").style.display = "none";
         }
 
         //Når brugeren scroller 100px ned skal knappen vises
-        window.onscroll = function(){
+        window.onscroll = function() {
             scrollFunction()
         };
 
-        function scrollFunction(){
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 document.querySelector(".fas").style.display = "block";
 
             } else {
-                document.querySelector(".fas").style.display ="none";
+                document.querySelector(".fas").style.display = "none";
             }
         }
 
         // når brugeren klikker på iconet skal den automatisk scrolle til toppen af dokumentet
-        function topFunction(){
+        function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-
     </script>
 </body>
 </html>

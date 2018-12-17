@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homepage til Marylou Jewerllery">
+    <meta name="description" content="Forside til MaryLou Jewellery som er en dansk smykkedesigner">
     <link rel="stylesheet" href="index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -15,7 +15,7 @@
 
 
     <main>
-     <section id="container" class="data-container"></section>
+        <section id="container" class="data-container"></section>
         <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
@@ -26,7 +26,8 @@
         <div class="linje"></div>
 
         <section id="container1" class="data-container1">
-            <img src="forsidemobil.jpg"><!--</section>
+            <img src="forsidemobil.jpg">
+            <!--</section>
         <template class="data-template1">
         <article class="wpPage">
             <h1 class="data-title1"></h1>
@@ -43,7 +44,7 @@
             </article>
                  </template>-->
 
-         <section id="container3" class="data-container3"></section>
+        <section id="container3" class="data-container3"></section>
         <template class="data-template3">
         <article class="wpPage">
             <h1 class="data-title3"></h1>
@@ -74,9 +75,9 @@
         let textContainer = document.querySelector(".data-container3");
 
         //Hent Json filen ind
-        async function hentJson(){
+        async function hentJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=dansk-smykkedesign-og-kunsthandvaerk");
-            pages=await jsonData.json();
+            pages = await jsonData.json();
             visPage();
 
             /*let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=billede1");
@@ -89,11 +90,11 @@
             visText();
         }
 
-        function visPage(){
+        function visPage() {
             console.log(pages);
 
             //Løb json filen igennem
-            pages.forEach(page =>{
+            pages.forEach(page => {
                 let klon = pageTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title").textContent = page.title.rendered;
                 klon.querySelector(".data-text").innerHTML = page.content.rendered;
@@ -103,11 +104,11 @@
             })
         }
 
-        function visBillede(){
+        function visBillede() {
             console.log(billede);
 
             //Løb json filen igennem
-            billede.forEach(billede =>{
+            billede.forEach(billede => {
                 let klon = billedeTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title1").textContent = billede.title.rendered;
                 klon.querySelector(".data-text1").innerHTML = billede.content.rendered;
@@ -119,11 +120,11 @@
 
 
 
-        function visText(){
+        function visText() {
             console.log(text);
 
             //Løb json filen igennem
-            text.forEach(text =>{
+            text.forEach(text => {
                 let klon = textTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title3").textContent = text.title.rendered;
                 klon.querySelector(".data-text3").innerHTML = text.content.rendered;

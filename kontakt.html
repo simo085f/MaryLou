@@ -4,33 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="kontakt.css" type="text/css">
+    <meta name="description" content="Kontakt MaryLou Jewellery og find hendes butik på Gammel Kongevej 101">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
     <title>Kontakt Marylou Jewellery</title>
 </head>
 
 <body>
-<!--    <?php include "header.html";?>-->
+    <!--    <?php include "header.html";?>-->
     <main>
 
         <section id="main_grid">
-    <!--Templates til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
-    <section id="container" class="data-container"></section>
-        <template class="data-template">
+            <!--Templates til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
+            <section id="container" class="data-container"></section>
+            <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
             <p class="data-text"></p>
             </article>
                  </template>
 
-        <section id="container1" class="data-container1"></section>
-        <template class="data-template1">
+            <section id="container1" class="data-container1"></section>
+            <template class="data-template1">
         <article class="wpPage">
             <h1 class="data-title1"></h1>
             <p class="data-text1"></p>
             </article>
                  </template>
 
-</section>
+        </section>
     </main>
 
     <!--<?php include "footer.html;?>-->
@@ -49,21 +50,21 @@
         let mapContainer = document.querySelector(".data-container1");
 
         //Hent Json filen ind
-        async function hentJson(){
+        async function hentJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=kontakt");
-            pages=await jsonData.json();
+            pages = await jsonData.json();
             visPage();
 
-         let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=map");
+            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=map");
             map = await jsonData1.json();
             visMap();
         }
 
-        function visPage(){
+        function visPage() {
             console.log(pages);
 
             //Løb json filen igennem
-            pages.forEach(page =>{
+            pages.forEach(page => {
                 let klon = pageTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title").textContent = page.title.rendered;
                 klon.querySelector(".data-text").innerHTML = page.content.rendered;
@@ -73,11 +74,11 @@
             })
         }
 
-         function visMap(){
+        function visMap() {
             console.log(map);
 
             //Løb json filen igennem
-            map.forEach(map =>{
+            map.forEach(map => {
                 let klon = mapTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title1").textContent = map.title.rendered;
                 klon.querySelector(".data-text1").innerHTML = map.content.rendered;
@@ -86,7 +87,6 @@
                 mapContainer.appendChild(klon);
             })
         }
-
     </script>
 </body>
 </html>
