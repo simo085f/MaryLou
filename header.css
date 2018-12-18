@@ -22,9 +22,9 @@ body{
 }*/
 
 #logo{
-    background-image: url(logomary3-01.svg);
+    background-image: url(logomj%5D-01.svg);
     background-size: 300% 100%;
-    width: 26%;
+    width: 26.2%;
     height: 9vw;
      z-index: 11;
     position: relative;
@@ -38,10 +38,10 @@ body{
 
 #logo:hover{
     animation-name: diamant;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-timing-function: steps(3);
     animation-iteration-count: infinite;
-    animation-direction: normal;
+
 
 }
 
@@ -95,9 +95,9 @@ body{
 
 
     #logo1{
-    background-image: url(logomary3-01.svg);
+    background-image: url(logomjewe-01.svg);
     background-size: 300% 100%;
-    width: 26%;
+    width: 26.2%;
     height: 9vw;
      z-index: 11;
     position: relative;
@@ -110,10 +110,10 @@ body{
 
 #logo1:hover{
     animation-name: diamant;
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-timing-function: steps(3);
     animation-iteration-count: infinite;
-    animation-direction: normal;
+
 
 }
 
