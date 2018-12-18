@@ -46,6 +46,26 @@ footer a:hover{
     text-decoration: underline;
 }
 
+form{
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+}
+
+#send{
+    width: 70%;
+    padding: 8px;
+    color: #F18FAB;
+    border: none;
+    background-color: white;
+}
+
+#email{
+    color: black;
+    padding: 8px;
+    width: 70%;
+}
+
 @media screen and (min-width:627px){
    footer{
         width: 500px;
