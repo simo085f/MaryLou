@@ -23,18 +23,16 @@
             </article>
                  </template>
 
-            <section id="container1" class="data-container1"></section>
-            <template class="data-template1">
-        <article class="wpPage">
-            <h1 class="data-title1"></h1>
-            <p class="data-text1"></p>
-            </article>
-                 </template>
+            <section id="container1" class="data-container1">
+            <div id="map"></div>
+            </section>
 
         </section>
     </main>
 
     <!--<?php include "footer.html;?>-->
+
+
 
     <script>
         //Hent Json filen når DOM er loaded
@@ -45,9 +43,9 @@
         let pageTemplate = document.querySelector(".data-template");
         let pageContainer = document.querySelector(".data-container");
 
-        let map;
+      /*  let map;
         let mapTemplate = document.querySelector(".data-template1");
-        let mapContainer = document.querySelector(".data-container1");
+        let mapContainer = document.querySelector(".data-container1");*/
 
         //Hent Json filen ind
         async function hentJson() {
@@ -55,9 +53,9 @@
             pages = await jsonData.json();
             visPage();
 
-            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=map");
+          /*  let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=map-2");
             map = await jsonData1.json();
-            visMap();
+            visMap();*/
         }
 
         function visPage() {
@@ -74,7 +72,7 @@
             })
         }
 
-        function visMap() {
+    /*    function visMap() {
             console.log(map);
 
             //Løb json filen igennem
@@ -86,7 +84,10 @@
                 //Placer klonen i HTML
                 mapContainer.appendChild(klon);
             })
-        }
+        }*/
     </script>
+
+
+
 </body>
 </html>

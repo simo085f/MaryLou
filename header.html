@@ -13,8 +13,7 @@
 <body>
 
     <section id="logo">
-        <a href="index.html">
-        </a>
+
     </section>
 
 
@@ -37,8 +36,7 @@
 
     <div id="topMenu" class="topNav">
         <section id="logo1">
-            <a href="index.html">
-        </a>
+
         </section>
 
         <div class="punkter">
@@ -52,6 +50,20 @@
     </div>
 
     <script>
+        document.querySelector("#logo").addEventListener("click", forside);
+        document.querySelector("#logo1").addEventListener("click", forside1);
+
+
+
+
+        function forside() {
+            window.location.href = "index.html";
+        }
+
+        function forside1() {
+            window.location.href = "index.html";
+        }
+
         //Åben side navigation til mobil størrelse
         function openNav() {
             document.querySelector("#sideMenu").style.width = "100%";

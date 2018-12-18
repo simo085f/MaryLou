@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vaerkstedet.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Galleri</title>
 </head>
 
@@ -22,10 +25,18 @@
         <section id="container1" class="data-container1"></section>
         <template class="data-template1">
         <article class="wpPage">
-            <h1 class="data-title1"></h1>
+            <h1 class="data-title"></h1>
             <p class="data-text1"></p>
             </article>
                  </template>
+
+        <!--<section id="container2" class="data-container2"></section>
+        <template class="data-template2">
+        <article class="wpPage">
+            <h1 class="data-title"></h1>
+            <p class="data-text2"></p>
+            </article>
+                 </template>-->
 
 
     </main>
@@ -45,15 +56,23 @@
         let fotosTemplate = document.querySelector(".data-template1");
         let fotosContainer = document.querySelector(".data-container1");
 
+        /*let billede;
+        let billedeTemplate = document.querySelector(".data-template2");
+        let billedeContainer = document.querySelector(".data-container2");*/
+
         //Hent Json filen ind
         async function hentJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=vaerksted");
             pages = await jsonData.json();
             visPage();
 
-            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=");
+            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=butikken");
             fotos = await jsonData1.json();
             visFotos();
+
+            let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=butik");
+            billede = await jsonData2.json();
+            visBillede();
         }
 
         function visPage() {
@@ -76,13 +95,26 @@
             //Løb json filen igennem
             fotos.forEach(fotos => {
                 let klon = fotosTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title1").textContent = fotos.title.rendered;
                 klon.querySelector(".data-text1").innerHTML = fotos.content.rendered;
 
                 //Placer klonen i HTML
                 fotosContainer.appendChild(klon);
             })
         }
+
+      /*  function visBillede() {
+            console.log(billede);
+
+            //Løb json filen igennem
+            billede.forEach(billede => {
+                let klon = billedeTemplate.cloneNode(true).content;
+                klon.querySelector(".data-text2").innerHTML = billede.content.rendered;
+
+                //Placer klonen i HTML
+                billedeContainer.appendChild(klon);
+            })
+        }*/
     </script>
 </body>
+
 </html>
