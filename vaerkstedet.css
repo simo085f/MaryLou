@@ -120,42 +120,24 @@ article img {
         @media screen and (min-width:1200px) {
             main {
                 width: 900px;
+                grid-gap: 70px;
             }
 
             #container {
-                width: 450px;
+                width: 500px;
 
             }
 
             #container1 {
-                width: 450px;
+                width: 400px;
 
             }
 
-            #container2 {
-                width: 450px;
-                margin-top: -20px;
-
-
-
-            }
-            .border {
-                border: 1px solid black;
-                width: 450px;
-                height: 450px;
-            }
-
-            .wpPage2 {
-                padding: 60px;
-                font-size: 16px;
+            #container1 img {
+                width: 81%;
             }
 
 
-
-            #container3 {
-                width: 450px;
-                margin-top: -39px;
-            }
 
 
         }
@@ -164,44 +146,23 @@ article img {
         @media screen and (min-width:1500px) {
             main {
                 width: 1000px;
+                grid-gap: 120px
             }
 
             #container {
-                width: 500px;
+                width: 600px;
 
             }
 
             #container1 {
-                width: 500px;
+                width: 400px;
 
             }
 
-            #container2 {
-                width: 500px;
-                margin-top: -20px;
-
-
-
-            }
-            .border {
-                border: 1px solid black;
-                width: 500px;
-                height: 500px;
-            }
-
-            .wpPage2 {
-                padding-top: 94px;
-                padding-bottom: 92px;
-                padding-left: 60px;
-                padding-right: 60px;
-                font-size: 16px;
+            #container1 img {
+                width: 69%;
             }
 
 
-
-            #container3 {
-                width: 500px;
-                margin-top: -39px;
-            }
 
         }
