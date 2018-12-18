@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="om.css" type="text/css">
     <!--    link til icon-->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Om Marylou Jewellery</title>
 </head>
@@ -35,13 +35,13 @@
 
 
 
-        <section id="container2" class="data-container2"></section>
+        <!--<section id="container2" class="data-container2"></section>
         <template class="data-template2">
         <article class="wpPage">
             <h1 class="data-title2"></h1>
             <p class="data-text2"></p>
             </article>
-                 </template>
+                 </template>-->
 
         <div onclick="topFunction()"> <i style='font-size:24px' class='fas'>&#xf062;</i></div>
 
@@ -62,9 +62,9 @@
         let billedeTemplate = document.querySelector(".data-template1");
         let billedeContainer = document.querySelector(".data-container1");
 
-        let text;
+        /*let text;
         let textTemplate = document.querySelector(".data-template2");
-        let textContainer = document.querySelector(".data-container2");
+        let textContainer = document.querySelector(".data-container2");*/
 
         //Hent Json filen ind
         async function hentJson() {
@@ -76,9 +76,9 @@
             billede = await jsonData1.json();
             visBillede();
 
-            let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=132-2");
-            text = await jsonData2.json();
-            visText();
+            /* let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=132-2");
+             text = await jsonData2.json();
+             visText();*/
         }
 
         function visPage() {
@@ -101,7 +101,6 @@
             //Løb json filen igennem
             billede.forEach(billede => {
                 let klon = billedeTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title1").textContent = billede.title.rendered;
                 klon.querySelector(".data-text1").innerHTML = billede.content.rendered;
 
                 //Placer klonen i HTML
@@ -109,19 +108,19 @@
             })
         }
 
-        function visText() {
-            console.log(text);
+        /* function visText() {
+             console.log(text);
 
-            //Løb json filen igennem
-            text.forEach(text => {
-                let klon = textTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title2").textContent = text.title.rendered;
-                klon.querySelector(".data-text2").innerHTML = text.content.rendered;
+             //Løb json filen igennem
+             text.forEach(text => {
+                 let klon = textTemplate.cloneNode(true).content;
+                 klon.querySelector(".data-title2").textContent = text.title.rendered;
+                 klon.querySelector(".data-text2").innerHTML = text.content.rendered;
 
-                //Placer klonen i HTML
-                textContainer.appendChild(klon);
-            })
-        }
+                 //Placer klonen i HTML
+                 textContainer.appendChild(klon);
+             })
+         }*/
 
 
 

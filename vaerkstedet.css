@@ -70,14 +70,12 @@ article img {
             width: 620px;
         }
 
-        main {}
-
         #container {
             width: 620px;
 
         }
 
-        #contaner1 {
+        #container1 {
             width: 620px;
             display: flex;
             flex-wrap: wrap;
