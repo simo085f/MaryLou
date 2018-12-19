@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="header.css" type="text/css">
+    <!--Burgermenu ikon hentes ind med det nedstående link rel-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -15,9 +16,9 @@
     <section id="logo">
     </section>
 
-    <!--Sidenavigation/menu til mobilstørrelse-->
+    <!--Sidenavigation/menu til mobilstørrelse med overlay brugt inspiration fra w3schools - https://www.w3schools.com/howto/howto_js_sidenav.asp-->
     <div id="sideMenu" class="sideNav">
-        <!--Luk knap til sidenavigationen et ikon der hentes ind-->
+        <!--Luk knap til sidenavigationen et ikon/kryds sættes ind-->
         <a href="javascript:void(0)" class="closebtn" style="font-size: 30px; float: right; width: 20px; border: none; margin-right: 2vw;" onclick="closeMenu()">&times;</a>
         <!--Menupunkter til sidenavigationen-->
         <div class="punkter">
@@ -27,7 +28,8 @@
             <a href="kontakt.html">KONTAKT</a>
         </div>
     </div>
-    <!--Burgermenu som er blevet hentet ind som et ikon der henvises til dette i <head>-->
+
+    <!--Burgermenu som er blevet hentet ind som et ikon - https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-navicon-->
     <span onclick="openNav()"><i class="fa fa-navicon" style="font-size:35px;font-weight:10;margin-left: 1vw; margin-top: 1vw; color:#F18FAB; "></i></span>
 
 
@@ -58,7 +60,7 @@
             window.location.href = "index.html";
         }
 
-        /*Javascript til sidenavigation
+        /*Javascript til sidenavigation - https://www.w3schools.com/howto/howto_js_sidenav.asp
         Åben side navigation til mobil størrelse*/
         function openNav() {
             document.querySelector("#sideMenu").style.width = "100%";

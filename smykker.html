@@ -9,12 +9,15 @@
     <meta name="description" content="MaryLou Jewellerys webshop med et udvalg af unikke smykker, som der findes få af. Køb smykker online">
     <!--Den nedstående <link rel> bruges for at hente et ikon fra w3schools -https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-shopping-basket&unicon=f291 -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+    <!--    link til ikonet (pilen der fører til top) https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062-->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
     <title>Shop smykker online</title>
 </head>
 
 <body>
     <nav>
+        <!--Filtreringsmenu i ipad og desktop strørrelse som skal ligge under navigationen fra header.html-->
         <section id="filtrering">
             <div class="knapper">
                 <div class="menu_item" data-kategori="alle">ALLE</div>
@@ -23,16 +26,20 @@
                 <div class="menu_item" data-kategori="Armbånd">ARMBÅND</div>
                 <div class="menu_item" data-kategori="Vedhæng">VEDHÆNG</div>
                 <h1></h1>
-                <!--Ikonet er hentet fra w3schools - https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-shopping-basket&unicon=f291-->
+                <!--Ikon som er en indkøbskurv, den vil ikke kunne klikkes på da webshoppen er produtype.
+                Ikonet er hentet fra w3schools - https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-shopping-basket&unicon=f291-->
                 <i class='fas fa-shopping-basket' style='font-size:18px; color:#F18FAB; width: 20px; height: 20px; margin-top: 8px;'></i>
             </div>
         </section>
     </nav>
+    <!--Function der skal gøre at når man klikker på ikonet som er en pil der pejer opad bliver man ført til toppen af siden. Samt styling af ikonet - w3schools - https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062  -->
+    <div onclick="topFunction()"> <i style='font-size:24px' class='fa'>&#xf062;</i></div>
 
     <main>
+        <!--Filtrerings knap med dropdown funktion knappen vil fungere både som åben og luk knap-->
         <div class="dropdown">
             <button onclick="dropFunction()" class="dropknap">FILTRERING</button>
-
+            <!--De filtrerings muligheder som vil blive vist og skjult ved klik på filtreringsknappen-->
             <div id="drop" class="content">
                 <div class="menu_item" data-kategori="alle">ALLE</div>
                 <div class="menu_item" data-kategori="Ringe">RINGE</div>
@@ -42,6 +49,7 @@
             </div>
         </div>
 
+        <!--Template til indholdet på smykke siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
         <section class="smykker"></section>
         <template class="smykke-template">
         <article class="smykke-container">
@@ -57,8 +65,10 @@
     </main>
 
     <script>
+        //Hent Json filen når DOM er loaded
         document.addEventListener("DOMContentLoaded", getJson);
 
+        //Find DOM Elemterne
         let alleSmykker;
         let smykkeTemplate = document.querySelector(".smykke-template");
         let smykkeContainer = document.querySelector(".smykker");
@@ -66,6 +76,7 @@
 
         smykkeFilter = "alle";
 
+        //Hent Json filen ind
         async function getJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/posts?per_page=38");
             alleSmykker = await jsonData.json();
@@ -73,11 +84,13 @@
             visSmykker();
         }
 
+        //Når der klikkes på et af menu_item skal function filtreringen starte
         document.querySelectorAll(".menu_item").forEach(knap => {
             knap.addEventListener("click", filtrering);
         })
 
         function filtrering() {
+            //Produkterne bliver indelt i deres kategorier så de bliver filtreret og vist
             smykkeContainer.textContent = "";
             smykkeFilter = this.getAttribute("data-kategori");
             visSmykker();
@@ -85,6 +98,7 @@
 
         function visSmykker() {
             console.log(visSmykker + smykkeFilter);
+            //Løb json filen igennem og hvis det er klikket på en kategori skal de vises ellers vises alle
             alleSmykker.forEach(smykke => {
                 if (smykkeFilter == smykke.acf.kategori) {
                     udskriv();
@@ -92,54 +106,68 @@
                     udskriv();
                 }
 
-                function udskriv() {
-                    let klon = smykkeTemplate.cloneNode(true).content;
 
+                function udskriv() {
+                    //Det content som hentes fra json filen og vises
+                    let klon = smykkeTemplate.cloneNode(true).content;
                     klon.querySelector(".pris").textContent = smykke.acf.pris + "kr";
                     klon.querySelector(".image").src = smykke.acf.billede;
                     klon.querySelector(".titel").textContent = smykke.title.rendered;
 
-
+                    //Når der klikkes på button skal der åbenes et nyt vindue som er single.php
                     klon.querySelector("button").addEventListener("click", () => {
                         window.location.href = "single.html?id=" + smykke.id;
 
                     });
 
+                    //Placer klonen i HTML
                     smykkeContainer.appendChild(klon);
                 }
             })
         }
 
-        /*Jeg har brugt w3schools - https://www.w3schools.com/howto/howto_js_dropdown.asp
-        Til at få filtreringspunkterne til at komme frem når der klikkes på filteringsknappen */
+
+        /*Til at få contentet på siden til at rykke ned når menu-itemsne vises og til at rykke contentet tilbage igen når menu-itemsne fjernes har jeg brugt denne kode fra codepen - https://codepen.io/html5andblog/pen/BpzvZW*/
         function dropFunction() {
             if (clickState == 0) {
-                // code snippet 1
+                /*Ryk content(.smykker) ned og vis content/menu-knapper*/
                 document.querySelector(".smykker").style.marginTop = "220px";
                 document.querySelector("#drop").classList.add("visContent");
                 clickState = 1;
             } else {
-                // code snippet 2
+                /*Ryk content(.smykker) op og skjul content/menu-knapper*/
                 document.querySelector(".smykker").style.marginTop = "20px";
                 document.querySelector("#drop").classList.remove("visContent");
                 clickState = 0;
             }
-
-
         }
 
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropknap')) {
-                var dropdowns = document.querySelector(".content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDrop = dropdowns[i];
-                    if (openDrop.classList.contains('show')) {
-                        openDrop.classList.remove(
-                            'show');
-                    }
-                }
+        /*JAVASCRIPT TIL IKONET DER SKAL FØRER TIL TOPPEN AF SITET NÅR DER KLIKKES - HJÆLP FRA w3schools https://www.w3schools.com/howto/howto_js_scroll_to_top.asp*/
+        //når siden er loaded skal top iconet gemmes indtil der scrolles
+        document.addEventListener("DOMContentLoaded", gem);
+
+        function gem() {
+            document.querySelector(".fa").style.display = "none";
+        }
+
+        //Når brugeren scroller 100px ned skal knappen vises
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.querySelector(".fa").style.display = "block";
+
+            } else {
+                document.querySelector(".fa").style.display = "none";
             }
+        }
+
+        // når brugeren klikker på iconet skal den automatisk scrolle til toppen af dokumentet
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 </body>

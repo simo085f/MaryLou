@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="index.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!--    link til ikonet (pilen der fører til top) https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062-->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <title>Marylou Jewellery</title>
 </head>
 
@@ -55,6 +57,8 @@
             <img class="image" src="" alt="">
             </article>
                  </template>
+        <!--Function der skal gøre at når man klikker på ikonet som er en pil der pejer opad bliver man ført til toppen af siden. Samt styling af ikonet - w3schools - https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062  -->
+        <div onclick="topFunction()"> <i style='font-size:24px' class='fas'>&#xf062;</i></div>
 
 
     </main>
@@ -153,6 +157,33 @@
                 //Placer klonen i HTML
                 ringContainer.appendChild(klon);
             })
+        }
+        /*JAVASCRIPT TIL IKONET DER SKAL FØRER TIL TOPPEN AF SITET NÅR DER KLIKKES - HJÆLP FRA w3schools https://www.w3schools.com/howto/howto_js_scroll_to_top.asp*/
+        //når siden er loaded skal top iconet gemmes indtil der scrolles
+        document.addEventListener("DOMContentLoaded", gem);
+
+        function gem() {
+            document.querySelector(".fas").style.display = "none";
+        }
+
+        //Når brugeren scroller 100px ned skal knappen vises
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.querySelector(".fas").style.display = "block";
+
+            } else {
+                document.querySelector(".fas").style.display = "none";
+            }
+        }
+
+        // når brugeren klikker på iconet skal den automatisk scrolle til toppen af dokumentet
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 
