@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
         <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
-            <p class="data-text"></p>
+            <img class="image" src="" alt="">
             </article>
                  </template>
 
@@ -29,7 +30,7 @@
         <template class="data-template1">
         <article class="wpPage">
             <h1 class="data-title1"></h1>
-            <p class="data-text1"></p>
+            <img class="image" src="" alt="">
             </article>
         </template>
 
@@ -50,7 +51,7 @@
         <template class="data-template3">
         <article class="wpPage">
             <h1 class="data-title3"></h1>
-            <p class="data-text3"></p>
+            <img class="image" src="" alt="">
             </article>
                  </template>
 
@@ -81,11 +82,11 @@
 
         //Hent Json filen ind
         async function hentJson() {
-            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=760-2");
+            let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=home1");
             pages = await jsonData.json();
             visPage();
 
-            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=763-2");
+            let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=home2");
             billede = await jsonData1.json();
             visBillede();
 
@@ -94,7 +95,7 @@
             visText();
 
 
-            let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=766-2");
+            let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=home3");
             ring = await jsonData3.json();
             visRing();
         }
@@ -105,8 +106,7 @@
             //Løb json filen igennem
             pages.forEach(page => {
                 let klon = pageTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title").textContent = page.title.rendered;
-                klon.querySelector(".data-text").innerHTML = page.content.rendered;
+                klon.querySelector(".image").src = page.acf.image;
 
                 //Placer klonen i HTML
                 pageContainer.appendChild(klon);
@@ -119,8 +119,7 @@
             //Løb json filen igennem
             billede.forEach(billede => {
                 let klon = billedeTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title1").textContent = billede.title.rendered;
-                klon.querySelector(".data-text1").innerHTML = billede.content.rendered;
+                klon.querySelector(".image").src = billede.acf.image;
 
                 //Placer klonen i HTML
                 billedeContainer.appendChild(klon);
@@ -151,8 +150,7 @@
             //Løb json filen igennem
             ring.forEach(ring => {
                 let klon = ringTemplate.cloneNode(true).content;
-                klon.querySelector(".data-title3").textContent = ring.title.rendered;
-                klon.querySelector(".data-text3").innerHTML = ring.content.rendered;
+                klon.querySelector(".image").src = ring.acf.image;
 
                 //Placer klonen i HTML
                 ringContainer.appendChild(klon);
@@ -161,4 +159,5 @@
     </script>
 
 </body>
+
 </html>
