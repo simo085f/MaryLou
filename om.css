@@ -1,5 +1,4 @@
 /*Overordnede regler for styling*/
-
 * {
     box-sizing: border-box;
 }
@@ -20,16 +19,7 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Mobile first version*/
-
-main {
-    width: 360px;
-    margin: 0 auto;
-    padding-top: 60px;
-}
-
 /* style til top icon*/
-
 .fas {
     display: none;
     position: fixed;
@@ -39,6 +29,14 @@ main {
     cursor: pointer;
 
 }
+
+/* Mobile first version*/
+main {
+    width: 360px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
 
 article img {
     width: 100%;
@@ -69,8 +67,6 @@ article img {
 
         #container1 {
             width: 620px;
-            display: flex;
-            flex-wrap: wrap;
 
 
         }

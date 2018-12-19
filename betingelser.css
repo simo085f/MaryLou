@@ -1,3 +1,4 @@
+/* Overordnede regler for styling */
 *{
     box-sizing: border-box;
 }
@@ -55,19 +56,15 @@ main p{
 }
 
 /*Media queries til tablet landscape*/
-
 @media screen and (min-width:1024px){
     main{
         width: 850px;
     }
 
 
-
-
 }
 
 /*Media queries til 1200px bredde*/
-
 @media screen and (min-width:1200px){
     main{
         width: 900px;
@@ -77,7 +74,6 @@ main p{
 }
 
 /*Media queries til 1500px bredde*/
-
 @media screen and (min-width:1500px){
     main{
         width: 1000px;

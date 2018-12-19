@@ -1,3 +1,4 @@
+/* Overordnede regler for styling*/
 * {
     box-sizing: border-box;
 }
@@ -76,7 +77,7 @@ main p {
 
     #main_grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
 
 
@@ -111,8 +112,8 @@ main p {
     }
 
     main iframe {
-        width: 520px;
-        height: 520px;
+        width: 500px;
+        height: 500px;
     }
 
 
@@ -148,8 +149,8 @@ main p {
     }
 
     main iframe {
-        width: 730px;
-        height: 730px;
+        width: 630px;
+        height: 630px;
     }
 
 }

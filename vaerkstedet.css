@@ -20,24 +20,6 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-.fas {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 5;
-    cursor: pointer;
-
-}
-
-/* Mobile first version*/
-
-main {
-    width: 360px;
-    margin: 0 auto;
-    padding-top: 60px;
-}
-
 /* style til top icon*/
 
 .fas {
@@ -50,6 +32,15 @@ main {
 
 }
 
+/* MOBILE FIRST VERSION*/
+
+main {
+    width: 360px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+
 article img {
     width: 100%;
     border: 4px solid white;
@@ -59,7 +50,6 @@ article img {
 .wpPage2 {
     padding: 20px;
 }
-
 
 
 .border {
@@ -74,104 +64,102 @@ article img {
     }
 
 
-    /*Media queries til tablet portrait*/
-    @media screen and (min-width:768px) {
-        main {
-            width: 620px;
+/*Media queries til tablet portrait*/
+@media screen and (min-width:768px) {
+    main {
+        width: 620px;
+        padding-top: 100px;
         }
 
-        #container {
-            width: 620px;
-            padding-top: 100px;
-
-        }
-
-        #container1 {
-            width: 620px;
-            display: flex;
-            flex-wrap: wrap;
+    #container {
+        width: 620px;
 
 
         }
 
-        #container1 img {
-            width: 49.6%;
+    #container1 {
+        width: 620px;
+        display: flex;
+        flex-wrap: wrap;
+
+
+        }
+
+    #container1 img {
+        width: 49.6%;
         }
 
     }
 
-    /*Media queries til tablet landscape*/
-    @media screen and (min-width:1024px) {
-        main {
-            width: 850px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 30px;
+/*Media queries til tablet landscape*/
+@media screen and (min-width:1024px) {
+    main {
+        width: 850px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
         }
 
 
-        #container {
-            width: 500px;
+    #container {
+        width: 500px;
 
         }
 
-        #container1 {
-            width: 530px;
+    #container1 {
+        width: 530px;
 
         }
 
-        #container1 img {
-            width: 60%;
+    #container1 img {
+         width: 60%;
         }
 
 
-        /*Media queries til 1200px bredde*/
-        @media screen and (min-width:1200px) {
-            main {
-                width: 900px;
-                grid-gap: 70px;
-            }
+/*Media queries til 1200px bredde*/
+@media screen and (min-width:1200px) {
+    main {
+        width: 900px;
+        grid-gap: 70px;
+    }
 
-            #container {
-                width: 500px;
+    #container {
+        width: 500px;
 
-            }
+    }
 
-            #container1 {
-                width: 400px;
+    #container1 {
+        width: 400px;
 
-            }
+    }
 
-            #container1 img {
-                width: 81%;
-            }
+    #container1 img {
+        width: 81%;
+    }
 
+}
 
+/*Media queries til 1500px bredde*/
+@media screen and (min-width:1500px) {
+    main {
+        width: 1000px;
+        grid-gap: 120px
+    }
 
+    #container {
+         width: 600px;
 
-        }
+    }
 
-        /*Media queries til 1500px bredde*/
-        @media screen and (min-width:1500px) {
-            main {
-                width: 1000px;
-                grid-gap: 120px
-            }
+    #container1 {
+        width: 400px;
 
-            #container {
-                width: 600px;
+    }
 
-            }
-
-            #container1 {
-                width: 400px;
-
-            }
-
-            #container1 img {
-                width: 69%;
-            }
+    #container1 img {
+        width: 69%;
+    }
 
 
 
-        }
+}

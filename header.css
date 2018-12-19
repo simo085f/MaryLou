@@ -1,4 +1,7 @@
-/* generelle regler*/
+/* Overordnede regler for styling */
+* {
+    box-sizing: border-box;
+}
 body{
     margin: 0;
     background-color: transparent;
@@ -78,7 +81,6 @@ body{
 }
 
 /* styling af topnav til ipad og desktop*/
-
 @media screen and (min-width:768px){
     #sideMenu, .sideNav, .closebtn, span, #logo{
         display: none;
@@ -158,7 +160,7 @@ body{
     }
 
     #logo1{
-        width: 25%
+        width: 25%;
     }
 }
 
