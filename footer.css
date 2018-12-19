@@ -58,12 +58,17 @@ form {
     color: #F18FAB;
     border: none;
     background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid white;
 }
 
 #email {
     color: black;
     padding: 8px;
     width: 70%;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid white;
+    background-color: transparent;
 }
 
 @media screen and (min-width:627px) {

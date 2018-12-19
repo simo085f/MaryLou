@@ -10,16 +10,6 @@ body{
 
 }
 
-/* Styling af navigation i mobilstørrelse */
-
-/*#logo img{
-    width: 30%;
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-    position: relative;
-    z-index: 11;
-}*/
 
 #logo{
     background-image: url(logomj%5D-01.svg);
@@ -80,6 +70,7 @@ body{
     transition: 0.3s;
     border-bottom: 1px solid #F18FAB;
     font-size: 16px;
+    font-weight: 600;
 }
 
 .topNav{
@@ -150,8 +141,9 @@ body{
 
     .punkter{
         margin-top: 20px;
-        width: 67%;
+        width: 500px;
         float: right;
+        font-weight: 600;
 
     }
 
@@ -162,7 +154,7 @@ body{
 @media screen and (min-width:1024px){
 
     .punkter{
-        width: 50%;
+        width: 495px;
     }
 
     #logo1{
@@ -174,11 +166,11 @@ body{
 @media screen and (min-width:1200px){
 
     .punkter{
-        width: 50%;
+        width: 590px;
     }
 
     #logo1{
-        width: 25%
+        width: 25%;
     }
 
      #topMenu a{

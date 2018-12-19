@@ -11,7 +11,7 @@ body {
 main {
     width: 360px;
     margin: 0 auto;
-    margin-top: 100px;
+    padding-top: 60px;
 }
 
 main iframe {
@@ -61,6 +61,7 @@ main p {
 @media screen and (min-width:768px) {
     main {
         width: 620px;
+        padding-top: 100px;
     }
 
     #main_grid {
