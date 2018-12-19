@@ -7,38 +7,28 @@
     <link rel="stylesheet" href="vaerkstedet.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <title>Galleri</title>
+    <title>Butikken</title>
 </head>
 
 <body>
     <!--    <?php include "header.html";?>-->
     <main>
-        <!--Templates til indholdet på om siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
+        <!--Templates til indholdet på butik siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
         <section id="container" class="data-container"></section>
         <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
             <p class="data-text"></p>
-            </article>
-                 </template>
+        </article>
+        </template>
 
         <section id="container1" class="data-container1"></section>
         <template class="data-template1">
         <article class="wpPage">
             <h1 class="data-title"></h1>
             <p class="data-text1"></p>
-            </article>
-                 </template>
-
-        <!--<section id="container2" class="data-container2"></section>
-        <template class="data-template2">
-        <article class="wpPage">
-            <h1 class="data-title"></h1>
-            <p class="data-text2"></p>
-            </article>
-                 </template>-->
-
-
+        </article>
+        </template>
     </main>
 
     <!--<?php include "footer.html;?>-->
@@ -56,10 +46,6 @@
         let fotosTemplate = document.querySelector(".data-template1");
         let fotosContainer = document.querySelector(".data-container1");
 
-        /*let billede;
-        let billedeTemplate = document.querySelector(".data-template2");
-        let billedeContainer = document.querySelector(".data-container2");*/
-
         //Hent Json filen ind
         async function hentJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=vaerksted");
@@ -69,8 +55,6 @@
             let jsonData1 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=butikken");
             fotos = await jsonData1.json();
             visFotos();
-
-            //            let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=butik"); // billede = await jsonData2.json(); // visBillede();
         }
 
         function visPage() {
@@ -99,20 +83,6 @@
                 fotosContainer.appendChild(klon);
             })
         }
-
-        /*  function visBillede() {
-              console.log(billede);
-
-              //Løb json filen igennem
-              billede.forEach(billede => {
-                  let klon = billedeTemplate.cloneNode(true).content;
-                  klon.querySelector(".data-text2").innerHTML = billede.content.rendered;
-
-                  //Placer klonen i HTML
-                  billedeContainer.appendChild(klon);
-              })
-          }*/
     </script>
 </body>
-
 </html>

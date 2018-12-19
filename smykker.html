@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-
     <nav>
         <section id="filtrering">
             <div class="knapper">
@@ -30,8 +28,8 @@
             </div>
         </section>
     </nav>
-    <main>
 
+    <main>
         <div class="dropdown">
             <button onclick="dropFunction()" class="dropknap">FILTRERING</button>
 
@@ -41,10 +39,7 @@
                 <div class="menu_item" data-kategori="Øreringe">ØRERINGE</div>
                 <div class="menu_item" data-kategori="Armbånd">ARMBÅND</div>
                 <div class="menu_item" data-kategori="Vedhæng">VEDHÆNG</div>
-
-
             </div>
-
         </div>
 
         <section class="smykker"></section>
@@ -57,11 +52,8 @@
             <button class="koeb">Læs mere</button>
                 </div>
             <div class="kategori"></div>
-
-
-            </article>
+        </article>
         </template>
-
     </main>
 
     <script>
@@ -145,19 +137,10 @@
                     if (openDrop.classList.contains('show')) {
                         openDrop.classList.remove(
                             'show');
-
-
-
                     }
                 }
             }
         }
-
-        /*function closeNav(){
-             document.querySelector(".smykker").style.marginTop = "0";
-
-            document.querySelector(".content").style.height = "0";
-        }*/
     </script>
 </body>
 </html>

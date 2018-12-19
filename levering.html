@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Leveringsbetingelser ved køb af smykker hos MaryLou Jewellery">
+    <meta name="description" content="Leveringsbetingelser ved køb af smykker hos MaryLou Jewellery">
     <link rel="stylesheet" href="betingelser.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -12,18 +12,18 @@
 
 <body>
     <main>
-    <section id="container" class="data-container"></section>
+        <!--Templates til indholdet på levering siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
+        <section id="container" class="data-container"></section>
         <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
             <p class="data-text"></p>
             </article>
-                 </template>
-
+        </template>
     </main>
 
     <script>
-    //Hent Json filen når DOM er loaded
+        //Hent Json filen når DOM er loaded
         document.addEventListener("DOMContentLoaded", hentJson);
 
         //Find DOM Elemterne
@@ -32,18 +32,18 @@
         let pageContainer = document.querySelector(".data-container");
 
         //Hent Json filen ind
-        async function hentJson(){
+        async function hentJson() {
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=levering");
-            pages=await jsonData.json();
+            pages = await jsonData.json();
             visPage();
 
         }
 
-        function visPage(){
+        function visPage() {
             console.log(pages);
 
             //Løb json filen igennem
-            pages.forEach(page =>{
+            pages.forEach(page => {
                 let klon = pageTemplate.cloneNode(true).content;
                 klon.querySelector(".data-title").textContent = page.title.rendered;
                 klon.querySelector(".data-text").innerHTML = page.content.rendered;
@@ -52,8 +52,6 @@
                 pageContainer.appendChild(klon);
             })
         }
-
     </script>
-
 </body>
 </html>

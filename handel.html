@@ -12,14 +12,14 @@
 
 <body>
     <main>
+        <!--Template til indholdet på handelsbetingelser siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
         <section id="container" class="data-container"></section>
         <template class="data-template">
         <article class="wpPage">
             <h1 class="data-title"></h1>
             <p class="data-text"></p>
-            </article>
-                 </template>
-
+        </article>
+        </template>
     </main>
 
     <script>
@@ -36,7 +36,6 @@
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=handelsbetingelser");
             pages = await jsonData.json();
             visPage();
-
         }
 
         function visPage() {
@@ -53,6 +52,5 @@
             })
         }
     </script>
-
 </body>
 </html>

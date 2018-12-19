@@ -11,16 +11,15 @@
 </head>
 
 <body>
-
+    <!--Logo til side navigationen-->
     <section id="logo">
-
     </section>
 
-
+    <!--Sidenavigation/menu til mobilstørrelse-->
     <div id="sideMenu" class="sideNav">
+        <!--Luk knap til sidenavigationen et ikon der hentes ind-->
         <a href="javascript:void(0)" class="closebtn" style="font-size: 30px; float: right; width: 20px; border: none; margin-right: 2vw;" onclick="closeMenu()">&times;</a>
-
-
+        <!--Menupunkter til sidenavigationen-->
         <div class="punkter">
             <a href="smykker.html">SMYKKER</a>
             <a href="vaerkstedet.html">BUTIKKEN</a>
@@ -28,33 +27,28 @@
             <a href="kontakt.html">KONTAKT</a>
         </div>
     </div>
+    <!--Burgermenu som er blevet hentet ind som et ikon der henvises til dette i <head>-->
     <span onclick="openNav()"><i class="fa fa-navicon" style="font-size:35px;font-weight:10;margin-left: 1vw; margin-top: 1vw; color:#F18FAB; "></i></span>
 
 
-
-
-
+    <!--Topnavigation/menu til ipad samt desktop-->
     <div id="topMenu" class="topNav">
+        <!--Logo til topnavigationen/menu-->
         <section id="logo1">
-
         </section>
-
+        <!-- Menupunkter til topnavigation/menu-->
         <div class="punkter">
-
             <a href="smykker.html">SMYKKER</a>
             <a href="vaerkstedet.html">BUTIKKEN</a>
             <a href="om.html">OM MARYLOU</a>
             <a href="kontakt.html">KONTAKT</a>
         </div>
-
     </div>
 
     <script>
+        /*Når der klikkes på logoet både i mobil, ipad og desktop version skal den lede tilbage til index.php*/
         document.querySelector("#logo").addEventListener("click", forside);
         document.querySelector("#logo1").addEventListener("click", forside1);
-
-
-
 
         function forside() {
             window.location.href = "index.html";
@@ -64,12 +58,13 @@
             window.location.href = "index.html";
         }
 
-        //Åben side navigation til mobil størrelse
+        /*Javascript til sidenavigation
+        Åben side navigation til mobil størrelse*/
         function openNav() {
             document.querySelector("#sideMenu").style.width = "100%";
         }
 
-        //Luk Side navigation til mobilstørrelse
+        /*Luk Side navigation til mobilstørrelse*/
         function closeMenu() {
             document.querySelector("#sideMenu").style.width = "0";
         }

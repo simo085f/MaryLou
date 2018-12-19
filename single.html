@@ -12,6 +12,7 @@
 <body>
 
     <main>
+        <!--Template til indholdet på single siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
         <section class="data-container">
                 <img class="image" src="" alt="">
                 <section class="information">
@@ -26,12 +27,15 @@
     </main>
 
     <script>
-    let urlParams = new URLSearchParams(window.location.search);
-    let id = urlParams.get("id");
-    let smykke;
+        //Find DOM Elemterne
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let smykke;
 
-         document.addEventListener("DOMContentLoaded", getJson);
+        //Hent Json filen når DOM er loaded
+        document.addEventListener("DOMContentLoaded", getJson);
 
+        //Hent Json filen ind
         async function getJson(){
             let jsonData = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/posts");
             alleSmykker = await jsonData.json();
@@ -42,10 +46,9 @@
         function visSmykker(){
             let klon = document.querySelector(".data-container");
 
+            //Løb json filen igennem
             alleSmykker.forEach(smykke=>{
                 if(smykke.id == id){
-
-
                     klon.querySelector(".pris").textContent = smykke.acf.pris + "kr";
                     klon.querySelector(".image").src = smykke.acf.billede;
                     klon.querySelector(".titel").textContent = smykke.title.rendered;
@@ -53,9 +56,6 @@
                 }
             })
         }
-
-
     </script>
-
 </body>
 </html>

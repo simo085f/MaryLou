@@ -16,6 +16,7 @@
     <?php include "header.html"; ?>
 
     <main>
+        <!--Templates til indholdet på index, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
         <section id="container" class="data-container"></section>
         <template class="data-template">
         <article class="wpPage">
@@ -75,7 +76,6 @@
         let textTemplate = document.querySelector(".data-template2");
         let textContainer = document.querySelector(".data-container2");
 
-
         let ring;
         let ringTemplate = document.querySelector(".data-template3");
         let ringContainer = document.querySelector(".data-container3");
@@ -93,7 +93,6 @@
             let jsonData2 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=dansk-smykkedesign-og-kunsthandvaerk");
             text = await jsonData2.json();
             visText();
-
 
             let jsonData3 = await fetch("https://camilla-pedersen.dk/kea/MaryLou/wordpress/wp-json/wp/v2/pages?slug=home3");
             ring = await jsonData3.json();
@@ -141,7 +140,6 @@
                 textContainer.appendChild(klon);
             })
         }
-
 
 
         function visRing() {
