@@ -28,7 +28,7 @@ body{
 
 #logo:hover{
     animation-name: diamant;
-    animation-duration: 1.5s;
+    animation-duration: 3s;
     animation-timing-function: steps(3);
     animation-iteration-count: infinite;
 
@@ -86,7 +86,7 @@ body{
 
 
     #logo1{
-    background-image: url(logomjewe-01.svg);
+    background-image: url(logomj-01.svg);
     background-size: 300% 100%;
     width: 26.2%;
     height: 9vw;
@@ -101,7 +101,7 @@ body{
 
 #logo1:hover{
     animation-name: diamant;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-timing-function: steps(3);
     animation-iteration-count: infinite;
 
