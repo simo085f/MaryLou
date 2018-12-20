@@ -1,4 +1,5 @@
 /*Overordnede regler for styling*/
+
 * {
     box-sizing: border-box;
 }
@@ -20,6 +21,7 @@ p {
 }
 
 /* style til top icon*/
+
 .fas {
     display: none;
     position: fixed;
@@ -31,6 +33,7 @@ p {
 }
 
 /* styling til mobilstørrelse*/
+
 main {
     width: 360px;
     margin: 0 auto;
@@ -46,6 +49,7 @@ article img {
 
 
 /*Media queries til mobile landscape*/
+
 @media screen and (min-width:627px) {
     main {
         width: 500px;
@@ -150,7 +154,5 @@ article img {
             #container1 img {
                 width: 69%;
             }
-
-
 
         }
