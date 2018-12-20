@@ -11,7 +11,7 @@ body {
 main {
     width: 360px;
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 
 
@@ -40,6 +40,7 @@ main p{
 @media screen and (min-width:627px){
     main{
         width: 500px;
+        padding-top: 60px;
     }
 
 
@@ -59,6 +60,7 @@ main p{
 @media screen and (min-width:1024px){
     main{
         width: 850px;
+        padding-top: 120px;
     }
 
 
@@ -68,6 +70,7 @@ main p{
 @media screen and (min-width:1200px){
     main{
         width: 900px;
+        padding-top: 140px;
     }
 
 
