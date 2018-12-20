@@ -56,7 +56,7 @@ main p{
 @media screen and (min-width:627px){
     main{
         width: 500px;
-        padding-top: 60px;
+        padding-top: 70px;
     }
 
 
@@ -136,7 +136,7 @@ main p{
 @media screen and (min-width:1500px){
     main{
         width: 1000px;
-        padding-top: 150px;
+        padding-top: 160px;
     }
 
     .image{

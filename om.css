@@ -134,7 +134,8 @@ article img {
         @media screen and (min-width:1500px) {
             main {
                 width: 1000px;
-                grid-gap: 120px
+                grid-gap: 120px;
+                padding-top: 120px;
             }
 
             #container {
