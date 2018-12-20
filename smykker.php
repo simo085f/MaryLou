@@ -108,7 +108,7 @@
 
                     //Når der klikkes på button skal der åbenes et nyt vindue som er single.php
                     klon.querySelector("button").addEventListener("click", () => {
-                        window.location.href = "single.html?id=" + smykke.id;
+                        window.location.href = "single.php?id=" + smykke.id;
 
                     });
 
