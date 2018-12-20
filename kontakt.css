@@ -50,7 +50,7 @@ main p {
 }
 
 #main_grid {
-    padding-top: 2vw;
+    margin-top: -50px;
 }
 
 /*Media queries til mobile landscape*/
@@ -58,6 +58,10 @@ main p {
 @media screen and (min-width:627px) {
     main {
         width: 500px;
+    }
+
+    #main_grid{
+        margin: 0px;
     }
 
     main iframe {
@@ -103,6 +107,7 @@ main p {
 
     #main_grid {
         grid-gap: 20px;
+        margin-top: 50px;
 
     }
 

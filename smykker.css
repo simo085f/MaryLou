@@ -17,7 +17,7 @@ main {
     padding-top: 60px;
 }
 
-.fa {
+.fa-arrow-up {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -110,7 +110,6 @@ main {
     color: #F18FAB;
     font-weight: 600;
     cursor: pointer;
-    padding-left: 40px;
     padding-right: 40px;
     padding-top: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -131,6 +130,7 @@ main {
 @media screen and (min-width:627px) {
     main {
         width: 500px;
+        padding-top: 100px;
     }
 
     .content {

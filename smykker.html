@@ -30,7 +30,7 @@
         </section>
     </nav>
     <!--Function der skal gøre at når man klikker på ikonet som er en pil der pejer opad bliver man ført til toppen af siden. Samt styling af ikonet - w3schools - https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062  -->
-    <div onclick="topFunction()"> <i style='font-size:24px' class='fa'>&#xf062;</i></div>
+    <div onclick="topFunction()"> <i class='fas fa-arrow-up' style='font-size:24px'></i></div>
 
     <main>
         <!--Filtrerings knap med dropdown funktion knappen vil fungere både som åben og luk knap-->
@@ -144,7 +144,7 @@
         document.addEventListener("DOMContentLoaded", gem);
 
         function gem() {
-            document.querySelector(".fa").style.display = "none";
+            document.querySelector(".fa-arrow-up").style.display = "none";
         }
 
         //Når brugeren scroller 100px ned skal knappen vises
@@ -154,10 +154,10 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                document.querySelector(".fa").style.display = "block";
+                document.querySelector(".fa-arrow-up").style.display = "block";
 
             } else {
-                document.querySelector(".fa").style.display = "none";
+                document.querySelector(".fa-arrow-up").style.display = "none";
             }
         }
 
