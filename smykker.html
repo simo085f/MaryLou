@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="smykker.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <meta name="description" content="MaryLou Jewellerys webshop med et udvalg af unikke smykker, som der findes få af. Køb smykker online">
-    <!--Den nedstående <link rel> bruges for at hente ikoner fra w3schools -https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-shopping-basket&unicon=f291 -->
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <title>Shop smykker online</title>
-</head>
+    <meta name="description" content="MaryLou Jewellerys webshop med et udvalg af unikke smykker, som der findes få af. Køb smykker online">
+    <link rel="stylesheet" href="smykker.css" type="text/css">
+     <link rel="stylesheet" href="footer.css" type="text/css">
 
-<body>
+
+    <?php include "header.html";?>
     <nav>
         <!--Filtreringsmenu i ipad og desktop strørrelse som skal ligge under navigationen fra header.html-->
         <section id="filtrering">
@@ -60,7 +55,7 @@
         </article>
         </template>
     </main>
-
+<?php include "footer.html";?>
     <script>
         //Hent Json filen når DOM er loaded
         document.addEventListener("DOMContentLoaded", getJson);

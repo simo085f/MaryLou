@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="single.css" type="text/css">
-     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <!--    link til ikonet (pilen der fører til top) https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062-->
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <title>Beskrivelse af smykket</title>
-</head>
+    <link rel="stylesheet" href="single.css" type="text/css">
+     <link rel="stylesheet" href="footer.css" type="text/css">
+    <meta name="description" content="Beskrivelse af det valgte smykke">
 
-<body>
+<?php include "header.html";?>
 
     <main>
         <!--Template til indholdet på single siden, som skal bruges i javascript for at hente det dynamiske indhold ved hjælp af en json fil fra wordpress-->
@@ -30,7 +25,7 @@
         <!--Function der skal gøre at når man klikker på ikonet som er en pil der pejer opad bliver man ført til toppen af siden. Samt styling af ikonet - w3schools - https://www.w3schools.com/icons/tryit.asp?icon=fas_fa-arrow-up&unicon=f062  -->
         <div onclick="topFunction()"> <i style='font-size:24px' class='fas'>&#xf062;</i></div>
     </main>
-
+<?php include "footer.html";?>
     <script>
         //Find DOM Elemterne
         let urlParams = new URLSearchParams(window.location.search);

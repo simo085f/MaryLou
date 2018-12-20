@@ -94,12 +94,11 @@ body{
     background-size: 300% 100%;
     width: 28.49vw;
     height: 10.774vw;
-     z-index: 11;
+    z-index: 11;
     position: relative;
     float: left;
-   transform: scale(1);
-    margin-left: 10px;
-        cursor: pointer;
+    transform: scale(0.9);
+    cursor: pointer;
 
 
 
@@ -163,9 +162,7 @@ body{
         width: 495px;
     }
 
-    #logo1{
-        width: 25%;
-    }
+
 }
 
 
@@ -176,7 +173,9 @@ body{
     }
 
     #logo1{
-        width: 25%;
+        transform: scale(0.8);
+        margin-top: -10px;
+        margin-left: -20px
     }
 
      #topMenu a{
@@ -188,6 +187,11 @@ body{
 @media screen and (min-width:1500px){
     .punkter{
         width: 45%;
+
+    }
+
+    #logo1{
+        transform: scale(0.8);
 
     }
 
