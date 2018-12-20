@@ -39,7 +39,6 @@ main {
     background-color: transparent;
     color: #F18FAB;
     padding: 12px;
-    font-weight: 600;
     background-color: white;
     border: none;
     cursor: pointer;
@@ -108,7 +107,6 @@ main {
     background-color: transparent;
     border: none;
     color: #F18FAB;
-    font-weight: 600;
     cursor: pointer;
     padding-right: 40px;
     padding-top: 10px;
@@ -172,8 +170,8 @@ main {
     nav {
         top: 0;
         width: 530px;
-        border-bottom: 2px solid #F18FAB;
-        border-top: 2px solid #F18FAB;
+        border-bottom: 1px solid #F18FAB;
+        border-top: 1px solid #F18FAB;
         background-color: transparent;
         float: right;
     }
