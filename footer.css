@@ -8,6 +8,8 @@ body {
     margin: 0;
 }
 
+/* styling til mobil størrelse */
+
 footer {
     padding-top: 100px;
     width: 100%;
@@ -71,12 +73,14 @@ form {
     background-color: transparent;
 }
 
+/* media quaries til mobile landscape*/
 @media screen and (min-width:627px) {
     footer {
         width: 500px;
     }
 }
 
+/* media quaries til tablet portrait*/
 @media screen and (min-width:768px) {
 
     footer {
@@ -90,6 +94,7 @@ form {
 
 }
 
+/* media quaries til tablet landscape*/
 @media screen and (min-width:1024px) {
 
     footer {
@@ -99,6 +104,7 @@ form {
 
 }
 
+/* styling ved 1200px */
 @media screen and (min-width:1200px) {
 
     footer {
@@ -108,6 +114,7 @@ form {
 
 }
 
+/* styling ved 1500px*/
 @media screen and (min-width:1500px) {
 
     footer {

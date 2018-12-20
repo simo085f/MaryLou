@@ -27,10 +27,9 @@ main {
 
 }
 
-/* MOBILE VERSION FIRST */
+/* styling til mobilstørrelse*/
 
 /* filtrerings dropdown knap*/
-
 #filtrering {
     display: none;
 }
@@ -78,7 +77,6 @@ main {
 
 
 /* grid opsætning af smykker/produkter*/
-
 .smykker {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -125,7 +123,7 @@ main {
     font-family: 'Raleway', sans-serif;
 }
 
-
+/*Media queries til mobile landscape*/
 @media screen and (min-width:627px) {
     main {
         width: 500px;
@@ -143,7 +141,7 @@ main {
 
 
 
-
+/*Media queries til tablet portrait*/
 @media screen and (min-width:768px) {
     main {
         width: 620px;
@@ -197,7 +195,6 @@ main {
 }
 
 /*Media queries til tablet landscape*/
-
 @media screen and (min-width:1024px) {
     main {
         width: 850px;
@@ -222,7 +219,6 @@ main {
 }
 
 /*Media queries til 1200px bredde*/
-
 @media screen and (min-width:1200px) {
     main {
         width: 900px;
@@ -239,7 +235,6 @@ main {
 }
 
 /*Media queries til 1500px bredde*/
-
 @media screen and (min-width:1500px) {
     main {
         width: 1000px;

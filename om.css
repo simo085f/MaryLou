@@ -30,7 +30,7 @@ p {
 
 }
 
-/* Mobile first version*/
+/* styling til mobilstørrelse*/
 main {
     width: 360px;
     margin: 0 auto;
@@ -46,7 +46,6 @@ article img {
 
 
 /*Media queries til mobile landscape*/
-
 @media screen and (min-width:627px) {
     main {
         width: 500px;

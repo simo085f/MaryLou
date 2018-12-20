@@ -4,7 +4,7 @@
 }
 body{
     margin: 0;
-    background-color: white;
+    background-color: transparent;
 }
 
 .punkter a{
@@ -13,9 +13,11 @@ body{
 
 }
 
+/* styling til mobilstørrelse*/
+
 
 #logo{
-    background-image: url(loulogo-04.svg);
+    background-image: url(mary-04.svg);
     background-size: 300% 100%;
     width: 28.39vw;
     height: 10.774vw;
@@ -59,8 +61,7 @@ body{
     z-index: 10;
     top: 0;
     left: 0;
-    background-image: url(1.jpg);
-    background-size: 100%;
+    background-color: white;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -90,7 +91,7 @@ body{
 
 
     #logo1{
-    background-image: url(loulogo-04.svg);
+    background-image: url(mary-04.svg);
     background-size: 300% 100%;
     width: 28.49vw;
     height: 10.774vw;
@@ -156,6 +157,7 @@ body{
 
 }
 
+/* styling til tablet landscape */
 @media screen and (min-width:1024px){
 
     .punkter{
@@ -165,7 +167,7 @@ body{
 
 }
 
-
+/* stling ved 1200px */
 @media screen and (min-width:1200px){
 
     .punkter{
@@ -184,6 +186,7 @@ body{
     }
 }
 
+/* styling ved 1500px*/
 @media screen and (min-width:1500px){
     .punkter{
         width: 45%;

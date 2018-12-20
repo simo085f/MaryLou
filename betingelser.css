@@ -8,6 +8,7 @@ body {
     background-size: 100%;
 }
 
+/* styling til mobilstørrele*/
 main {
     width: 360px;
     margin: 0 auto;
@@ -36,7 +37,6 @@ main p{
 
 
 /*Media queries til mobile landscape*/
-
 @media screen and (min-width:627px){
     main{
         width: 500px;
